@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/PiyasaFragment">
+
+
+    <fragment
+        android:id="@+id/PiyasaFragment"
+        android:name="com.akramia.cryptotrad.fragment.PiyasaFragment"
+        android:label="fragment_piyasa"
+        tools:layout="@layout/fragment_piyasa" />
+    <fragment
+        android:id="@+id/StarFragment"
+        android:name="com.akramia.cryptotrad.fragment.StarFragment"
+        android:label="fragment_star"
+        tools:layout="@layout/fragment_star" />
+    <fragment
+        android:id="@+id/AramaFragment"
+        android:name="com.akramia.cryptotrad.fragment.AramaFragment"
+        android:label="fragment_arama"
+        tools:layout="@layout/fragment_arama" />
+    <fragment
+        android:id="@+id/KesfetFragment"
+        android:name="com.akramia.cryptotrad.fragment.KesfetFragment"
+        android:label="fragment_kesfet"
+        tools:layout="@layout/fragment_kesfet" />
+</navigation>
