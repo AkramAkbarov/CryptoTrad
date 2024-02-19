@@ -6,22 +6,76 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.PiyasaFragment">
 
-
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayoutA"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:background="#012301"
-        android:elevation="6dp"
-        android:minHeight="?attr/actionBarSize"
-        app:tabTextColor="@color/green"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewPagerA"
+    <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/marketFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/tabLayoutA" />
+        android:background="@drawable/top_gainerssss_bg"
+
+        >
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/topCurrencyRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/top_currency_layout" />
+
+        <TextView
+            android:id="@+id/Paratext"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:text="PARA"
+            android:textSize="12dp"
+            android:textColor="@color/green"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="59dp"
+            tools:layout_editor_absoluteY="95dp"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:text="FIYAT"
+            android:textSize="12dp"
+            android:textColor="@color/green"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="194dp"
+            tools:layout_editor_absoluteY="95dp"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:text="24H"
+            android:textSize="12dp"
+            android:textColor="@color/green"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="317dp"
+            tools:layout_editor_absoluteY="95dp"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/currencyRecyclerView"
+            android:layout_width="410dp"
+            android:layout_height="612dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            tools:listitem="@layout/currency_item_layout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
 
 </FrameLayout>

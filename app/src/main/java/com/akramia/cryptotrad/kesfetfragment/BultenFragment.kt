@@ -1,4 +1,4 @@
-package com.akramia.cryptotrad.fragment
+package com.akramia.cryptotrad.kesfetfragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,10 +14,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [ChildFragment2.newInstance] factory method to
+ * Use the [BultenFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ChildFragment2 : Fragment() {
+class BultenFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -35,7 +35,7 @@ class ChildFragment2 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_child2, container, false)
+        return inflater.inflate(R.layout.fragment_child3, container, false)
     }
 
     companion object {
@@ -45,12 +45,12 @@ class ChildFragment2 : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment ChildFragment2.
+         * @return A new instance of fragment ChildFragment3.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            ChildFragment2().apply {
+            BultenFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

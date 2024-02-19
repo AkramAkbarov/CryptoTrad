@@ -9,6 +9,9 @@ import androidx.core.content.ContextCompat
 import androidx.viewpager.widget.ViewPager
 import com.akramia.cryptotrad.R
 import com.akramia.cryptotrad.adapter.ViewPagerAdapter
+import com.akramia.cryptotrad.kesfetfragment.BultenFragment
+import com.akramia.cryptotrad.kesfetfragment.HaberFragment
+import com.akramia.cryptotrad.kesfetfragment.OgrenFragment
 import com.google.android.material.tabs.TabLayout
 
 class PiyasaFragment : Fragment() {
@@ -25,9 +28,9 @@ class PiyasaFragment : Fragment() {
         val color = ContextCompat.getColor(requireContext(), R.color.green)
 
         val adapter = ViewPagerAdapter(childFragmentManager)
-        adapter.addFragment(ChildFragment1(), "Child 1")
-        adapter.addFragment(ChildFragment2(), "Child 2")
-        adapter.addFragment(ChildFragment3(), "Child 3")
+        adapter.addFragment(HaberFragment(), "Child 1")
+        adapter.addFragment(OgrenFragment(), "Child 2")
+        adapter.addFragment(BultenFragment(), "Child 3")
 
         viewPager.adapter = adapter
         tabLayout.setupWithViewPager(viewPager)
