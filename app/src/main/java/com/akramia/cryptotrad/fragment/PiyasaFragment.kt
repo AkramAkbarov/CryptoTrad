@@ -1,44 +1,67 @@
 package com.akramia.cryptotrad.fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
-import androidx.viewpager.widget.ViewPager
-import com.akramia.cryptotrad.R
-import com.akramia.cryptotrad.adapter.ViewPagerAdapter
-import com.akramia.cryptotrad.kesfetfragment.BultenFragment
-import com.akramia.cryptotrad.kesfetfragment.HaberFragment
-import com.akramia.cryptotrad.kesfetfragment.OgrenFragment
-import com.google.android.material.tabs.TabLayout
+import androidx.lifecycle.lifecycleScope
+import com.akramia.cryptotrad.adapter.MaeketAdapter
+import com.akramia.cryptotrad.adapter.PiyasaFragmentAdapter
+import com.akramia.cryptotrad.apis.ApiInterface
+import com.akramia.cryptotrad.apis.ApiUtilities
+import com.akramia.cryptotrad.databinding.FragmentPiyasaBinding
+import com.nexis.cryptoapp.models.CryptoCurrency
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class PiyasaFragment : Fragment() {
 
+    private lateinit var binding: FragmentPiyasaBinding
 
+    private lateinit var list: List<CryptoCurrency>
+    private lateinit var adapter: MaeketAdapter
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? { val view = inflater.inflate(R.layout.fragment_piyasa, container, false)
+    ): View? {
+        binding=FragmentPiyasaBinding.inflate(layoutInflater)
 
-        val viewPager: ViewPager = view.findViewById(R.id.viewPagerA)
-        val tabLayout: TabLayout = view.findViewById(R.id.tabLayoutA)
-
-        val color = ContextCompat.getColor(requireContext(), R.color.green)
-
-        val adapter = ViewPagerAdapter(childFragmentManager)
-        adapter.addFragment(HaberFragment(), "Child 1")
-        adapter.addFragment(OgrenFragment(), "Child 2")
-        adapter.addFragment(BultenFragment(), "Child 3")
-
-        viewPager.adapter = adapter
-        tabLayout.setupWithViewPager(viewPager)
-
-        tabLayout.setSelectedTabIndicatorColor(color)
+        getTopCurrencyList()
 
 
+        list= listOf()
+        adapter= MaeketAdapter(requireContext(),list,"market")
+        binding.currencyRecyclerView.adapter =adapter
 
-        return view
+
+        return binding.root
+
+
+    }
+
+
+    private fun getTopCurrencyList() {
+        lifecycleScope.launch(Dispatchers.IO){
+            val res = ApiUtilities.getInstance().create(ApiInterface::class.java).getMarketData()
+
+            withContext(Dispatchers.Main){
+                binding.topCurrencyRecyclerView.adapter= PiyasaFragmentAdapter(requireContext(),res.body()!!.data.cryptoCurrencyList)
+
+            }
+            withContext(Dispatchers.Main){
+                list=res.body()!!.data.cryptoCurrencyList
+
+                adapter.upDateData(list)
+                binding.spinKitView.visibility= View.GONE
+            }
+
+
+
+
+            Log.d("SHUBH" ,"getTopCurrencyList: ${res.body()!!.data.cryptoCurrencyList}")
+        }
     }
 }
