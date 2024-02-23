@@ -10,8 +10,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/top_gainerssss_bg"
+        android:padding="8dp"
 
         >
+
 
 
         <androidx.recyclerview.widget.RecyclerView
@@ -23,7 +25,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-
             app:layout_constraintTop_toTopOf="parent"
             tools:listitem="@layout/top_currency_layout" />
 
@@ -52,6 +53,7 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/currencyRecyclerView"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.551"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/topCurrencyRecyclerView"
             tools:ignore="MissingConstraints" />
@@ -66,8 +68,10 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/Fiyattext"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.678"
             app:layout_constraintStart_toEndOf="@+id/Fiyattext"
             app:layout_constraintTop_toTopOf="@+id/Fiyattext"
+            app:layout_constraintVertical_bias="0.0"
             tools:ignore="MissingConstraints" />
 
         <com.github.ybq.android.spinkit.SpinKitView
@@ -84,11 +88,10 @@
             app:layout_constraintTop_toTopOf="parent" />
 
 
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/currencyRecyclerView"
-            android:layout_width="390dp"
-            android:padding="1dp"
+            android:layout_width="360dp"
+
             android:layout_height="612dp"
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -96,6 +99,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
 
+            app:layout_constraintTop_toBottomOf="@+id/topCurrencyRecyclerView"
             tools:listitem="@layout/currency_item_layout" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
