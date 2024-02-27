@@ -15,7 +15,6 @@
         >
 
 
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/topCurrencyRecyclerView"
             android:layout_width="match_parent"
@@ -23,7 +22,7 @@
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:listitem="@layout/top_currency_layout" />
