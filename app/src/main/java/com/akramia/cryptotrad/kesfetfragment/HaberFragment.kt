@@ -1,60 +1,68 @@
 package com.akramia.cryptotrad.kesfetfragment
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.akramia.cryptotrad.R
+import com.akramia.cryptotrad.adapter.LanguageAdapter
+import com.akramia.cryptotrad.fragment.Language
+import com.github.ybq.android.spinkit.SpinKitView
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [HaberFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class HaberFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var recyclerView: RecyclerView
+    private val languages = listOf(
+        Language("İki Dev Şirketten Bitcoin","Tahmini:2024'te Bunlar Olacak",
+            "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
+            R.drawable.ic_launcher_background),
+
+        Language("Ethereum ve Bitcoin'in Piyasa", "Dinamiklerindeki Rolü",
+            "https://www.bitcoinhaber.net/ethereum-ve-bitcoinin-piyasa-dinamiklerindeki-rolu/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
+            R.drawable.ic_launcher_background),
+
+        Language("Crypto Capo Altcoin","Patlamasına lşaret Etti! Ancak\n" +
+                "Bir Şarti Var ", "https://coin-turk.com/crypto-capo-altcoin-patlamasina-isaret-etti-ancak-bir-sarti-var?utm_source=coingecko&utm_medium=coingecko&utm_campaign=coingecko&utm_content=coingecko&utm_term=coingecko",
+            R.drawable.ic_launcher_background),
+
+        Language("Bitcoin'in Yükseliş eğilimi.", "Michael van de Poppe'nin\n" +
+                "Analizi ","https://www.bitcoinhaber.net/bitcoinin-yukselis-egilimi-ve-michael-van-de-poppenin-analizi/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
+            R.drawable.ic_launcher_background),
+
+        Language("Son Zamanların Yıldızı: ERC","404 Coinleri 'Sıradaki Büyük\n" +
+                "Şey' mi? ", "https://kriptokoin.com/yildiz-erc-404-coinleri/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
+            R.drawable.ic_launcher_background),
+
+        )
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_haber, container, false)
-    }
+        val view = inflater.inflate(R.layout.fragment_haber, container, false)
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ChildFragment1.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            HaberFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        recyclerView = view.findViewById(R.id.Haberrecyl)
+        recyclerView.layoutManager = LinearLayoutManager(context)
+
+
+        val spinKitView = view.findViewById<SpinKitView>(R.id.spinKitView)
+        Handler().postDelayed({
+            spinKitView.visibility = View.GONE
+        }, 2000) //
+
+        recyclerView.adapter = LanguageAdapter(languages) { language ->
+            // Tıklanan dilin web sitesine yönlendirme
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(language.url)
+            startActivity(intent)
+        }
+
+        return view
     }
 }

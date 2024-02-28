@@ -13,14 +13,23 @@
         android:layout_height="45dp"
         android:background="#090D2E" >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Newspaper"
-            android:textColor="#2196F3"
-            android:textSize="24dp"
-            android:textStyle="bold" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:text="Newspaper"
+                android:textColor="#2196F3"
+                android:textSize="20dp"
+                android:textStyle="bold|italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
     <com.google.android.material.tabs.TabLayout
@@ -28,16 +37,25 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
-        android:background="#090D2E"
+        android:background="@drawable/top_gainersssss_tablayout_bg"
         app:layout_constraintTop_toBottomOf="@+id/appbarkesfet"
         android:elevation="6dp"
         android:minHeight="?attr/actionBarSize"
         app:tabTextColor="#2196F3"
         app:tabMode="scrollable"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/KesfetViewPager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

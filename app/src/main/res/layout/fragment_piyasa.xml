@@ -10,9 +10,79 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/top_gainersssss_bg"
-        android:padding="8dp"
 
         >
+
+        <TableLayout
+            android:id="@+id/PiyasaTabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/top_gainersssss_tablayout_bg"
+
+            >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- İlk İkon için ImageView -->
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_notification"
+                    android:tint="#2979FF"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <!-- İkinci İkon için ImageView -->
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_markimg"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textView"
+                    app:layout_constraintHorizontal_bias="0.929"
+                    app:layout_constraintStart_toStartOf="@+id/imageView4"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.483" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="107dp"
+                    android:layout_height="wrap_content"
+                    android:text="Crypto Trad"
+                    android:textColor="#2979FF"
+                    android:textSize="18dp"
+                    android:textStyle="bold|italic"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.483" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="4dp"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_searchs"
+                    android:tint="#2979FF"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </TableLayout>
 
 
         <androidx.recyclerview.widget.RecyclerView
@@ -24,7 +94,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/PiyasaTabLayout"
             tools:listitem="@layout/top_currency_layout" />
 
         <TextView
@@ -91,14 +161,16 @@
             android:id="@+id/currencyRecyclerView"
             android:layout_width="390dp"
 
-            android:layout_height="612dp"
+            android:layout_height="560dp"
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.476"
 
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/topCurrencyRecyclerView"
+            app:layout_constraintVertical_bias="1.0"
             tools:listitem="@layout/currency_item_layout" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
