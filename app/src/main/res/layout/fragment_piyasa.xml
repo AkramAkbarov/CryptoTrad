@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/marketFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/top_gainerssss_bg"
+        android:background="@drawable/top_gainersssss_bg"
         android:padding="8dp"
 
         >
@@ -32,7 +32,7 @@
             android:layout_width="45dp"
             android:layout_height="wrap_content"
             android:text="PARA"
-            android:textColor="@color/green"
+            android:textColor="#2196F3"
             android:textSize="12dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/Fiyattext"
@@ -47,7 +47,7 @@
             android:layout_width="45dp"
             android:layout_height="wrap_content"
             android:text="FIYAT"
-            android:textColor="@color/green"
+            android:textColor="#2196F3"
             android:textSize="12dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/currencyRecyclerView"
@@ -62,7 +62,7 @@
             android:layout_width="45dp"
             android:layout_height="wrap_content"
             android:text="24H"
-            android:textColor="@color/green"
+            android:textColor="#2196F3"
             android:textSize="12dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/Fiyattext"
@@ -89,7 +89,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/currencyRecyclerView"
-            android:layout_width="360dp"
+            android:layout_width="390dp"
 
             android:layout_height="612dp"
             android:orientation="vertical"

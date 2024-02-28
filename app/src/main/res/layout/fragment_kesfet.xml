@@ -1,20 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/top_gainersssss_bg"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.KesfetFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarkesfet"
+        android:layout_width="411dp"
+        android:layout_height="45dp"
+        android:background="#090D2E" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Newspaper"
+            android:textColor="#2196F3"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+    </com.google.android.material.appbar.AppBarLayout>
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/KesfetTabLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentTop="true"
-        android:background="#012301"
+        android:background="#090D2E"
+        app:layout_constraintTop_toBottomOf="@+id/appbarkesfet"
         android:elevation="6dp"
         android:minHeight="?attr/actionBarSize"
-        app:tabTextColor="@color/green"
+        app:tabTextColor="#2196F3"
         app:tabMode="scrollable"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
     <androidx.viewpager.widget.ViewPager
@@ -22,4 +40,4 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

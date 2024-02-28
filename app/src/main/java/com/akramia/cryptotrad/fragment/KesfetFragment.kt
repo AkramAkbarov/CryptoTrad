@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
 import com.akramia.cryptotrad.R
 import com.akramia.cryptotrad.adapter.ViewPagerAdapter
@@ -24,12 +26,13 @@ class KesfetFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         val view = inflater.inflate(R.layout.fragment_kesfet, container, false)
 
         val viewPager: ViewPager = view.findViewById(R.id.KesfetViewPager)
         val tabLayout: TabLayout = view.findViewById(R.id.KesfetTabLayout)
 
-        val color = ContextCompat.getColor(requireContext(), R.color.green)
+        val color = ContextCompat.getColor(requireContext(), R.color.teal_700)
 
         val adapter = ViewPagerAdapter(childFragmentManager)
         adapter.addFragment(HaberFragment(), "Haberler")
@@ -42,6 +45,11 @@ class KesfetFragment : Fragment() {
         tabLayout.setupWithViewPager(viewPager)
 
         tabLayout.setSelectedTabIndicatorColor(color)
+
+
+
+
+
 
 
 
