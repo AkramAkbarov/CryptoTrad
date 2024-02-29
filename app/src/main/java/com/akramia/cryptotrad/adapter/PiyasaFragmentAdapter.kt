@@ -5,13 +5,14 @@ import android.view.LayoutInflater
 
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.akramia.cryptotrad.R
 import com.akramia.cryptotrad.databinding.TopCurrencyLayoutBinding
 import com.bumptech.glide.Glide
 import com.nexis.cryptoapp.models.CryptoCurrency
 
-class PiyasaFragmentAdapter(var context: Context, val list:List<CryptoCurrency>): RecyclerView.Adapter<PiyasaFragmentAdapter.TopMarketViewHolder>() {
+class PiyasaFragmentAdapter(var context: Context, val list:List<CryptoCurrency>, var type : String): RecyclerView.Adapter<PiyasaFragmentAdapter.TopMarketViewHolder>() {
     inner class TopMarketViewHolder(view: View): RecyclerView.ViewHolder(view) {
         var binding = TopCurrencyLayoutBinding.bind(view)
     }
@@ -45,6 +46,8 @@ class PiyasaFragmentAdapter(var context: Context, val list:List<CryptoCurrency>)
             holder.binding.topCurrencyChangeTextView.setTextColor(context.resources.getColor(R.color.red))
             holder.binding.topCurrencyChangeTextView.text = "${String.format("%.02f",item.quotes[0].percentChange24h)}%"
         }
+
+
     }
 
 }

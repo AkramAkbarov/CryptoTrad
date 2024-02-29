@@ -26,4 +26,8 @@
         android:name="com.akramia.cryptotrad.fragment.KesfetFragment"
         android:label="fragment_kesfet"
         tools:layout="@layout/fragment_kesfet" />
+    <fragment
+        android:id="@+id/detailsFragment2"
+        android:name="com.akramia.cryptotrad.fragment.DetailsFragment"
+        android:label="DetailsFragment" />
 </navigation>
