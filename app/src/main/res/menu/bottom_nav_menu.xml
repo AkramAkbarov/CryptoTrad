@@ -9,7 +9,7 @@
         app:showAsAction="always"/>
     <item android:id="@+id/StarFragment"
         android:enabled="true"
-        android:icon="@drawable/ic_bookmark"
+        android:icon="@drawable/ic_fav"
         android:title="Sevimliler"
         app:showAsAction="always"/>
 
