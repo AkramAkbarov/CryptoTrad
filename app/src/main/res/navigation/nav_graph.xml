@@ -30,4 +30,14 @@
         android:id="@+id/detailsFragment2"
         android:name="com.akramia.cryptotrad.fragment.DetailsFragment"
         android:label="DetailsFragment" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.akramia.cryptotrad.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/logRegFragment"
+        android:name="com.akramia.cryptotrad.LogRegFragment"
+        android:label="fragment_log_reg"
+        tools:layout="@layout/fragment_log_reg" />
 </navigation>

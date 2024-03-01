@@ -47,5 +47,18 @@
         app:layout_constraintTop_toBottomOf="@+id/SearchEdittex"
         app:layout_constraintVertical_bias="0.992" />
 
+    <com.github.ybq.android.spinkit.SpinKitView
+        style="@style/SpinKitView.ThreeBounce"
+        android:id="@+id/spinKitView"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:visibility="visible"
+        app:SpinKit_Color="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
