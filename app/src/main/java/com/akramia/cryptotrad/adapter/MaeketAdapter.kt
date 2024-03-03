@@ -4,10 +4,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+
 import com.akramia.cryptotrad.R
 import com.akramia.cryptotrad.databinding.CurrencyItemLayoutBinding
 import com.bumptech.glide.Glide
 import com.nexis.cryptoapp.models.CryptoCurrency
+
 
 class MaeketAdapter(var context: Context, var list: List<CryptoCurrency>,var type: String):RecyclerView.Adapter<MaeketAdapter.MarketViewHolder>(){
 
@@ -57,8 +59,6 @@ class MaeketAdapter(var context: Context, var list: List<CryptoCurrency>,var typ
 
 
 
-
     }
-
 
 }

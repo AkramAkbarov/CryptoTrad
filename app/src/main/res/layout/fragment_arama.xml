@@ -35,17 +35,17 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/SearchRecyler"
-        android:layout_width="407dp"
-        android:layout_height="656dp"
-        android:layout_marginTop="124dp"
+        android:id="@+id/currencyRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         tools:listitem="@layout/currency_item_layout"
-        android:padding="5dp"
+        android:layout_marginTop="12dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SearchEdittex"
-        app:layout_constraintVertical_bias="0.992" />
+        app:layout_constraintTop_toBottomOf="@+id/SearchEdittex"/>
 
     <com.github.ybq.android.spinkit.SpinKitView
         style="@style/SpinKitView.ThreeBounce"

@@ -5,12 +5,13 @@ import android.view.LayoutInflater
 
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+
 import com.akramia.cryptotrad.R
 import com.akramia.cryptotrad.databinding.TopCurrencyLayoutBinding
 import com.bumptech.glide.Glide
 import com.nexis.cryptoapp.models.CryptoCurrency
+
 
 class PiyasaFragmentAdapter(var context: Context, val list:List<CryptoCurrency>): RecyclerView.Adapter<PiyasaFragmentAdapter.TopMarketViewHolder>() {
     inner class TopMarketViewHolder(view: View): RecyclerView.ViewHolder(view) {
