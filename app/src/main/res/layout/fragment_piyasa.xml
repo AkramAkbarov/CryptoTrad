@@ -83,6 +83,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </TableLayout>
@@ -162,9 +163,9 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/currencyRecyclerView"
-            android:layout_width="390dp"
+            android:layout_width="406dp"
 
-            android:layout_height="560dp"
+            android:layout_height="567dp"
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"

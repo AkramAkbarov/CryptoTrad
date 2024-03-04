@@ -40,6 +40,9 @@ class AramaFragment : Fragment() {
         adapter = MaeketAdapter(requireContext(), list, "market")
         binding.currencyRecyclerView.adapter = adapter
 
+
+
+
         lifecycleScope.launch(Dispatchers.IO) {
             val res = ApiUtilities.getInstance().create(ApiInterface::class.java).getMarketData()
             if (res.body() != null) {
@@ -57,6 +60,7 @@ class AramaFragment : Fragment() {
         // Inflate the layout for this fragment
         return binding.root
     }
+
 
     lateinit var searchText: String
 
@@ -79,6 +83,7 @@ class AramaFragment : Fragment() {
 
             }
         })
+
     }
 
     private fun updateRecyclerView() {
@@ -94,5 +99,9 @@ class AramaFragment : Fragment() {
 
         }
         adapter.upDateData(data)
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
     }
 }

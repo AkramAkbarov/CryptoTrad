@@ -10,7 +10,11 @@
         android:id="@+id/PiyasaFragment"
         android:name="com.akramia.cryptotrad.fragment.PiyasaFragment"
         android:label="fragment_piyasa"
-        tools:layout="@layout/fragment_piyasa" />
+        tools:layout="@layout/fragment_piyasa" >
+        <action
+            android:id="@+id/action_PiyasaFragment_to_AramaFragment"
+            app:destination="@id/AramaFragment" />
+    </fragment>
     <fragment
         android:id="@+id/StarFragment"
         android:name="com.akramia.cryptotrad.fragment.StarFragment"
@@ -20,7 +24,11 @@
         android:id="@+id/AramaFragment"
         android:name="com.akramia.cryptotrad.fragment.AramaFragment"
         android:label="fragment_arama"
-        tools:layout="@layout/fragment_arama" />
+        tools:layout="@layout/fragment_arama" >
+        <action
+            android:id="@+id/action_AramaFragment_to_PiyasaFragment"
+            app:destination="@id/PiyasaFragment" />
+    </fragment>
     <fragment
         android:id="@+id/KesfetFragment"
         android:name="com.akramia.cryptotrad.fragment.KesfetFragment"
@@ -40,4 +48,9 @@
         android:name="com.akramia.cryptotrad.LogRegFragment"
         android:label="fragment_log_reg"
         tools:layout="@layout/fragment_log_reg" />
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.akramia.cryptotrad.signupFragment"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup" />
 </navigation>

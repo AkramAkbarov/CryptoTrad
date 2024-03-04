@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import com.akramia.cryptotrad.R
 import com.akramia.cryptotrad.adapter.MaeketAdapter
 import com.akramia.cryptotrad.adapter.PiyasaFragmentAdapter
 import com.akramia.cryptotrad.apis.ApiInterface
@@ -35,6 +37,12 @@ class PiyasaFragment : Fragment() {
         list= listOf()
         adapter= MaeketAdapter(requireContext(),list,"market")
         binding.currencyRecyclerView.adapter =adapter
+
+
+        binding.imageView2.setOnClickListener {
+            findNavController().navigate(R.id.action_PiyasaFragment_to_AramaFragment)
+
+        }
 
 
         return binding.root
