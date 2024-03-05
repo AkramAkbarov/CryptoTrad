@@ -21,12 +21,10 @@ import com.google.android.material.tabs.TabLayout
 
 class KesfetFragment : Fragment() {
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         val view = inflater.inflate(R.layout.fragment_kesfet, container, false)
 
         val viewPager: ViewPager = view.findViewById(R.id.KesfetViewPager)
@@ -38,24 +36,13 @@ class KesfetFragment : Fragment() {
         adapter.addFragment(HaberFragment(), "Haberler")
         adapter.addFragment(OgrenFragment(), "Öğren")
         adapter.addFragment(BultenFragment(), "Bülten")
-        adapter.addFragment(BlogFragment(),"Blog")
-        adapter.addFragment(PodcastFragment(),"Podcast")
+        adapter.addFragment(BlogFragment(), "Blog")
+        adapter.addFragment(PodcastFragment(), "Podcast")
 
         viewPager.adapter = adapter
         tabLayout.setupWithViewPager(viewPager)
-
         tabLayout.setSelectedTabIndicatorColor(color)
 
-
-
-
-
-
-
-
         return view
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_kesfet, container, false)
     }
-
 }
