@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.akramia.cryptotrad.R
 import com.akramia.cryptotrad.adapter.LanguageAdapter
-import com.akramia.cryptotrad.fragment.Language
+import com.akramia.cryptotrad.modelsKesfet.Language
 import com.github.ybq.android.spinkit.SpinKitView
 
 class HaberFragment : Fragment() {

@@ -7,13 +7,13 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.akramia.cryptotrad.R
+import com.akramia.cryptotrad.modelsKesfet.Bulten
 import com.akramia.cryptotrad.modelsKesfet.Language
 
-
-class LanguageAdapter(
-    private val languages: List<Language>,
-    private val onItemClickListener: (Language) -> Unit
-) : RecyclerView.Adapter<LanguageAdapter.ViewHolder>() {
+class BultenAdapter(
+    private val bulten: List<Bulten>,
+    private val onItemClickListener: (Bulten) -> Unit
+) : RecyclerView.Adapter<BultenAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.haberler_item, parent, false)
@@ -21,22 +21,19 @@ class LanguageAdapter(
     }
 
     override fun onBindViewHolder(holder:ViewHolder, position: Int) {
-        val language = languages[position]
-        holder.textView.text = language.name
-        holder.textView2.text = language.forname
-        holder.imageView.setImageResource(language.image)
+        val language = bulten[position]
+        holder.textView.text = language.bilgi
         holder.itemView.setOnClickListener {
             onItemClickListener(language)
         }
     }
 
     override fun getItemCount(): Int {
-        return languages.size
+        return bulten.size
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val textView: TextView = itemView.findViewById(R.id.textView1)
-        val textView2: TextView = itemView.findViewById(R.id.textView2)
-        val imageView: ImageView = itemView.findViewById(R.id.imageView)
+
     }
 }
