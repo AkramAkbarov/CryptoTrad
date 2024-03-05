@@ -22,7 +22,7 @@ class BultenFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
     private val bulten = listOf(
-        Bulten("İki Dev Şirketten Bitcoin",
+        Bulten("  İki Dev Şirketten Bitcoin \uD83E\uDD8E\uD83D\uDE80",
             "Çarşamba, Şubat 28,2024",
             "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
             ),
