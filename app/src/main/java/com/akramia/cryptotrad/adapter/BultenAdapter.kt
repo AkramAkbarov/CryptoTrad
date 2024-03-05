@@ -16,15 +16,16 @@ class BultenAdapter(
 ) : RecyclerView.Adapter<BultenAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.haberler_item, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.bulten_item, parent, false)
         return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder:ViewHolder, position: Int) {
-        val language = bulten[position]
-        holder.textView.text = language.bilgi
+        val bulten = bulten[position]
+        holder.textView.text = bulten.bilgi
+        holder.textView2.text = bulten.tarih
         holder.itemView.setOnClickListener {
-            onItemClickListener(language)
+            onItemClickListener(bulten)
         }
     }
 
@@ -34,6 +35,7 @@ class BultenAdapter(
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val textView: TextView = itemView.findViewById(R.id.textView1)
+        val textView2: TextView = itemView.findViewById(R.id.textView2)
 
     }
 }
