@@ -5,23 +5,23 @@
     <item android:id="@+id/PiyasaFragment"
         android:enabled="true"
         android:icon="@drawable/ic_stats"
-        android:title="Piyasa"
+        android:title="Market"
         app:showAsAction="always"/>
     <item android:id="@+id/StarFragment"
         android:enabled="true"
         android:icon="@drawable/ic_fav"
-        android:title="Sevimliler"
+        android:title="Favori"
         app:showAsAction="always"/>
 
     <item android:id="@+id/AramaFragment"
         android:enabled="true"
         android:icon="@drawable/ic_search"
-        android:title="Ara"
+        android:title="Search"
         app:showAsAction="always"/>
     <item android:id="@+id/KesfetFragment"
         android:enabled="true"
         android:icon="@drawable/ic_explore"
-        android:title="Kesfet"
+        android:title="Discover"
         app:showAsAction="always"/>
 
 </menu>
