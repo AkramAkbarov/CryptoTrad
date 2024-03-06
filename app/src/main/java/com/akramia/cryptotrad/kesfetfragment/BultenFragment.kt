@@ -22,10 +22,67 @@ class BultenFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
     private val bulten = listOf(
-        Bulten("  İki Dev Şirketten Bitcoin \uD83E\uDD8E\uD83D\uDE80",
+        Bulten("\uD83E\uDD8E\uD83D\uDE80 İki Dev Şirketten Bitcoin ",
             "Çarşamba, Şubat 28,2024",
             "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
             ),
+        Bulten("\uD83E\uDD8E\uD83D\uDE80 İki Dev Şirketten Bitcoin ",
+            "Çarşamba, Şubat 28,2024",
+            "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
+        ),
+        Bulten("\uD83E\uDD8E\uD83D\uDE80 İki Dev Şirketten Bitcoin ",
+            "Çarşamba, Şubat 28,2024",
+            "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
+        ),
+        Bulten("\uD83E\uDD8E\uD83D\uDE80 İki Dev Şirketten Bitcoin ",
+            "Çarşamba, Şubat 28,2024",
+            "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
+        ),
+        Bulten("\uD83E\uDD8E\uD83D\uDE80 İki Dev Şirketten Bitcoin ",
+            "Çarşamba, Şubat 28,2024",
+            "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
+        ),
+        Bulten("\uD83E\uDD8E\uD83D\uDE80 İki Dev Şirketten Bitcoin ",
+            "Çarşamba, Şubat 28,2024",
+            "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
+        ),
+        Bulten("\uD83E\uDD8E\uD83D\uDE80 İki Dev Şirketten Bitcoin ",
+            "Çarşamba, Şubat 28,2024",
+            "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
+        ),
+        Bulten("\uD83E\uDD8E\uD83D\uDE80 İki Dev Şirketten Bitcoin ",
+            "Çarşamba, Şubat 28,2024",
+            "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
+        ),
+        Bulten("\uD83E\uDD8E\uD83D\uDE80 İki Dev Şirketten Bitcoin ",
+            "Çarşamba, Şubat 28,2024",
+            "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
+        ),
+        Bulten("\uD83E\uDD8E\uD83D\uDE80 İki Dev Şirketten Bitcoin ",
+            "Çarşamba, Şubat 28,2024",
+            "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
+        ),
+        Bulten("\uD83E\uDD8E\uD83D\uDE80 İki Dev Şirketten Bitcoin ",
+            "Çarşamba, Şubat 28,2024",
+            "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
+        ),
+        Bulten("\uD83E\uDD8E\uD83D\uDE80 İki Dev Şirketten Bitcoin ",
+            "Çarşamba, Şubat 28,2024",
+            "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
+        ),
+        Bulten("\uD83E\uDD8E\uD83D\uDE80 İki Dev Şirketten Bitcoin ",
+            "Çarşamba, Şubat 28,2024",
+            "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
+        ),
+        Bulten("\uD83E\uDD8E\uD83D\uDE80 İki Dev Şirketten Bitcoin ",
+            "Çarşamba, Şubat 28,2024",
+            "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
+        ),
+        Bulten("\uD83E\uDD8E\uD83D\uDE80 İki Dev Şirketten Bitcoin ",
+            "Çarşamba, Şubat 28,2024",
+            "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
+        ),
+
     )
 
     override fun onCreateView(
@@ -45,6 +102,10 @@ class BultenFragment : Fragment() {
             startActivity(intent)
 
         }
+        val spinKitView = view.findViewById<SpinKitView>(R.id.spinKitView)
+        Handler().postDelayed({
+            spinKitView.visibility = View.GONE
+        }, 1000)
 
         // Inflate the layout for this fragment
         return view
