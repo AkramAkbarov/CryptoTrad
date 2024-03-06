@@ -3,10 +3,13 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+
+import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 
 import com.akramia.cryptotrad.R
 import com.akramia.cryptotrad.databinding.CurrencyItemLayoutBinding
+import com.akramia.cryptotrad.fragment.PiyasaFragmentDirections
 import com.bumptech.glide.Glide
 import com.nexis.cryptoapp.models.CryptoCurrency
 
@@ -54,6 +57,13 @@ class MaeketAdapter(var context: Context, var list: List<CryptoCurrency>,var typ
 
             holder.binding.currencyChangeTextView.setTextColor(context.resources.getColor(R.color.red))
             holder.binding.currencyChangeTextView.text = "${String.format("%.02f",item.quotes[0].percentChange24h)}%"
+        }
+
+
+        holder.itemView.setOnClickListener {
+            findNavController(it).navigate(
+                PiyasaFragmentDirections.actionPiyasaFragmentToDetailsFragment(item)
+            )
         }
 
 
