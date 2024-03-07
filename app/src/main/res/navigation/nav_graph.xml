@@ -17,6 +17,7 @@
         <action
             android:id="@+id/action_PiyasaFragment_to_detailsFragment"
             app:destination="@id/detailsFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/StarFragment"

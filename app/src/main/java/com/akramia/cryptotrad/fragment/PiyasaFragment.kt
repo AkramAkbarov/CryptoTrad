@@ -20,10 +20,13 @@ class PiyasaFragment : Fragment() {
     private lateinit var viewModel: PiyasaViewModel
     private lateinit var adapter: MaeketAdapter
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+
         binding = FragmentPiyasaBinding.inflate(layoutInflater)
         viewModel = ViewModelProvider(this).get(PiyasaViewModel::class.java)
         adapter = MaeketAdapter(requireContext(), emptyList(), "market")
@@ -35,6 +38,8 @@ class PiyasaFragment : Fragment() {
         binding.imageView2.setOnClickListener {
             findNavController().navigate(R.id.action_PiyasaFragment_to_AramaFragment)
         }
+
+
 
 
         return binding.root

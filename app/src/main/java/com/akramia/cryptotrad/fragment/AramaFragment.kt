@@ -45,6 +45,7 @@ class AramaFragment : Fragment() {
             binding.spinKitView.visibility = View.GONE
         }
 
+
         setupSearch()
 
         return binding.root
