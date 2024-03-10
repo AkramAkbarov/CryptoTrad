@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 
 import com.akramia.cryptotrad.R
 import com.akramia.cryptotrad.databinding.CurrencyItemLayoutBinding
+import com.akramia.cryptotrad.fragment.AramaFragment
+import com.akramia.cryptotrad.fragment.AramaFragmentDirections
 import com.akramia.cryptotrad.fragment.PiyasaFragmentDirections
 import com.bumptech.glide.Glide
 import com.nexis.cryptoapp.models.CryptoCurrency
@@ -66,6 +68,11 @@ class MaeketAdapter(var context: Context, var list: List<CryptoCurrency>,var typ
             )
         }
 
+        holder.itemView.setOnClickListener {
+            findNavController(it).navigate(
+                AramaFragmentDirections.actionAramaFragmentToDetailsFragment(item)
+            )
+        }
 
 
 
