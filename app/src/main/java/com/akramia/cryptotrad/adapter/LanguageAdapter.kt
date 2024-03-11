@@ -23,7 +23,7 @@ class LanguageAdapter(
     override fun onBindViewHolder(holder:ViewHolder, position: Int) {
         val language = languages[position]
         holder.textView.text = language.name
-        holder.textView2.text = language.forname
+        holder.textView2.text = language.tarih
         holder.imageView.setImageResource(language.image)
         holder.itemView.setOnClickListener {
             onItemClickListener(language)

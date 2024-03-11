@@ -49,6 +49,7 @@ class PiyasaFragmentAdapter(var context: Context, val list:List<CryptoCurrency>)
         }
 
 
+
     }
 
 }

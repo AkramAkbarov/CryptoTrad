@@ -42,6 +42,8 @@ class PiyasaFragment : Fragment() {
 
 
 
+
+
         return binding.root
     }
 

@@ -37,13 +37,14 @@ class AramaFragment : Fragment() {
     ): View? {
         binding = FragmentAramaBinding.inflate(layoutInflater)
         viewModel = ViewModelProvider(this).get(AramaViewModel::class.java)
-        adapter = MaeketAdapter(requireContext(), emptyList(), "market")
+        adapter = MaeketAdapter(requireContext(), emptyList(), "Arama")
         binding.currencyRecyclerView.adapter = adapter
 
         viewModel.cryptoCurrencyList.observe(viewLifecycleOwner) {
             adapter.upDateData(it)
             binding.spinKitView.visibility = View.GONE
         }
+
 
 
         setupSearch()

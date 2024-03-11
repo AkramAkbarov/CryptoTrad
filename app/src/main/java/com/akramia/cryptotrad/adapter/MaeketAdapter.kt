@@ -61,21 +61,27 @@ class MaeketAdapter(var context: Context, var list: List<CryptoCurrency>,var typ
             holder.binding.currencyChangeTextView.text = "${String.format("%.02f",item.quotes[0].percentChange24h)}%"
         }
 
-
         holder.itemView.setOnClickListener {
-            findNavController(it).navigate(
-                PiyasaFragmentDirections.actionPiyasaFragmentToDetailsFragment(item)
-            )
+            if (type=="market"){
+                findNavController(it).navigate(
+                    PiyasaFragmentDirections.actionPiyasaFragmentToDetailsFragment(item)
+                )
+            } else if (type == "Arama"){
+                findNavController(it).navigate(
+                    AramaFragmentDirections.actionAramaFragmentToDetailsFragment(item)
+                )
+            }
         }
 
-        holder.itemView.setOnClickListener {
-            findNavController(it).navigate(
-                AramaFragmentDirections.actionAramaFragmentToDetailsFragment(item)
-            )
-        }
+
+
+
 
 
 
     }
+
+
+
 
 }

@@ -60,7 +60,11 @@
         android:id="@+id/logRegFragment"
         android:name="com.akramia.cryptotrad.LogRegFragment"
         android:label="fragment_log_reg"
-        tools:layout="@layout/fragment_log_reg" />
+        tools:layout="@layout/fragment_log_reg" >
+        <action
+            android:id="@+id/action_logRegFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
     <fragment
         android:id="@+id/signupFragment"
         android:name="com.akramia.cryptotrad.signupFragment"
