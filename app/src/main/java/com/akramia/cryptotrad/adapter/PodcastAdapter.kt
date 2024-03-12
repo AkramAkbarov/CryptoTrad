@@ -7,11 +7,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.akramia.cryptotrad.R
+import com.akramia.cryptotrad.modelsKesfet.Language
 import com.akramia.cryptotrad.modelsKesfet.Podcast
 
 class PodcastAdapter(
     private val podcast: List<Podcast>,
-    private val onItemClickListener: (Podcast)->Unit
+    private val onItemClickListener: (Podcast) -> Unit
 
 ) :RecyclerView.Adapter<PodcastAdapter.ViewHolder>() {
     class ViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView){
