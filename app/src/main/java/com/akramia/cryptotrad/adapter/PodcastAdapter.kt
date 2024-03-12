@@ -3,18 +3,15 @@ package com.akramia.cryptotrad.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView.OnItemClickListener
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.view.menu.MenuView.ItemView
 import androidx.recyclerview.widget.RecyclerView
 import com.akramia.cryptotrad.R
-import com.akramia.cryptotrad.modelsKesfet.Bulten
-import com.akramia.cryptotrad.modelsKesfet.Language
+import com.akramia.cryptotrad.modelsKesfet.Podcast
 
 class PodcastAdapter(
-    private val podcast:List<Language>,
-    private val onItemClickListener: (Bulten)->Unit
+    private val podcast: List<Podcast>,
+    private val onItemClickListener: (Podcast)->Unit
 
 ) :RecyclerView.Adapter<PodcastAdapter.ViewHolder>() {
     class ViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView){
@@ -26,7 +23,7 @@ class PodcastAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.haberler_item, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.podcast_item, parent, false)
         return ViewHolder(view)
     }
 
@@ -39,6 +36,9 @@ class PodcastAdapter(
         holder.textView.text=podcast.name
         holder.textView2.text=podcast.tarih
         holder.imageView.setImageResource(podcast.image)
+        holder.itemView.setOnClickListener {
+            onItemClickListener(podcast)
+        }
 
     }
 

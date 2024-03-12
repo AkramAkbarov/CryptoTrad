@@ -16,7 +16,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:paddingTop="12dp"
         android:paddingBottom="12dp"
         android:background="@drawable/top_gainersssssrecy_bg"
@@ -25,22 +25,22 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardViewIMG"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
+            android:layout_width="93dp"
+            android:layout_height="100dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             app:cardCornerRadius="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                tools:srcCompat="@tools:sample/avatars"/>
+                tools:srcCompat="@tools:sample/avatars" />
 
         </androidx.cardview.widget.CardView>
 
@@ -66,7 +66,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:text="Description"
-            android:textColor="@color/white"
+            android:textColor="#99ECF0F1"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="@+id/cardViewIMG"
             app:layout_constraintEnd_toEndOf="parent"

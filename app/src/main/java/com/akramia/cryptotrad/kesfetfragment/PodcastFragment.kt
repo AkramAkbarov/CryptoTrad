@@ -11,178 +11,90 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.akramia.cryptotrad.R
-import com.akramia.cryptotrad.adapter.LanguageAdapter
+import com.akramia.cryptotrad.adapter.PodcastAdapter
 import com.akramia.cryptotrad.modelsKesfet.Language
+import com.akramia.cryptotrad.modelsKesfet.Podcast
 import com.github.ybq.android.spinkit.SpinKitView
 
 
 class PodcastFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
-    private val languages = listOf(
-        Language("İki Dev Şirketten Bitcoin\nTahmini:2024'te Bunlar Olacak","kriptokoin: 9 saat once",
-            "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.cripto),
+    private val podcast = listOf(
+        Podcast("lluvium: The Next Generation of ","\n" +
+                "Şubat 03, 2023 ",
+            "https://audio.buzzsprout.com/zxlkpok18ju4qboego2dgbf9nde6?response-content-disposition=inline&",
+            R.drawable.download),
 
-        Language("Ethereum ve Bitcoin'in Piyasa\nDinamiklerindeki Rolü", "bitcoinhaber: 11 saat once",
-            "https://www.bitcoinhaber.net/ethereum-ve-bitcoinin-piyasa-dinamiklerindeki-rolu/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.kripto),
+        Podcast("How Did FTX Crash with Nansen's", "Aralık 16, 2022",
+            "https://audio.buzzsprout.com/l4wkogujcmzwotyhfx19j04ph3ws?response-content-disposition=inline&",
+            R.drawable.nansenanalysts),
 
-        Language("Crypto Capo Altcoin\nPatlamasına lşaret Etti! Ancak\nBir Şarti Var ", "coin-turk: 11 saat once",
-            "https://coin-turk.com/crypto-capo-altcoin-patlamasina-isaret-etti-ancak-bir-sarti-var?utm_source=coingecko&utm_medium=coingecko&utm_campaign=coingecko&utm_content=coingecko&utm_term=coingecko",
-            R.drawable.kriptoe),
+        Podcast("Nifty's deal with Game of Thrones,\n" +
+                "HBO, and more! w/ Jeff, co-founder\n" +
+                "of Nifty's  ", "Aralık 02, 2022",
+            "https://audio.buzzsprout.com/cm0egbzzsegkmgziytx2q1b0skou?response-content-disposition=inline&",
+            R.drawable.jeffmariskio),
 
-        Language("Bitcoin'in Yükseliş eğilimi.\nMichael van de Poppe'nin\nAnalizi", "bitcoinhaber: 13 saat once" ,
-            "https://www.bitcoinhaber.net/bitcoinin-yukselis-egilimi-ve-michael-van-de-poppenin-analizi/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.bitcoinhaberi013),
+        Podcast("How To Become A Better DAO? W/\n" +
+                "Ori, co-founder of Orca", "Kasım 07, 2022 " ,
+            "https://www.buzzsprout.com/719703/11644517-how-to-become-a-better-dao-w-ori-co-founder-of-orca.mp3",
+            R.drawable.ori),
 
-        Language("Son Zamanların Yıldızı: ERC\n404 Coinleri 'Sıradaki Büyük\nŞey' mi? ","kriptokoin: 17 saat once",
+        Podcast("S\n" +
+                "Discussing The State of\n" +
+                "Stablecoins with Frax Finance Frax Finance  ","\n" +
+                "Ekim 14, 2022 ",
             "https://kriptokoin.com/yildiz-erc-404-coinleri/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.etherium),
-        Language("Analist: Bu 2 Altcoin\n" +
-                "için Hala Frlama\n" +
-                "Potansiyeli Var!","kriptokoin: 17 saat once",
-            "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.cryptoo),
+            R.drawable.samkazemian),
+        Podcast("\n" +
+                "The Future of Multichain with\n" +
+                "SushiSwap w/ Sarang Parikh, Core\n" +
+                "Developer of Sushi - 72","\n" +
+                "Eylül 23, 2022 ",
+            "https://audio.buzzsprout.com/6l00vxyin7091mvldhnyrdz2v2oe?response-content-disposition=inline&",
+            R.drawable.sarangparikh),
 
 
-        Language("Kaynaklar, ABD'de 110\n" +
-                "Milyon Kişinin Izlediği Super\nBowl Etkinliğinde Bitcoin Spot..","bitcoinsistemi: 17 saat once"
-            , "https://www.bitcoinsistemi.com/kaynaklar-abdde-110-milyon-kisinin-izledigi-super-bowl-etkinliginde-bitcoin-spot-etflerin-bulunup-bulunmayacagini-acikladi/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.bitcoinabd),
+        Podcast("\n" +
+                "How Sudoswap Is Changing The\n" +
+                "NFT Game w/ Owen, Co-Founder of\n" +
+                "Sudoswap - 71 ","Eylül 09, 2022"
+            , "https://audio.buzzsprout.com/12b9clfpfdjxo7e8f7a780v101bw?response-content-disposition=inline&",
+            R.drawable.owen),
 
-        Language("JPMorgan ve iki analistten\n" +
-                "Ethereum'un Spot ETF\nAçiklamasi!" ,"coinmuhendisi: 21 saat once"
-            , "https://coinmuhendisi.com/blog/jpmorgan-ve-iki-analistten-ethereumun-spot-etf-aciklamasi/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.eth),
+        Podcast("ls Solana Stepping Up? with\n" +
+                "George Harrap, Co-Founder of Step\n" +
+                "Finance - Ep. 70" ,"\n" +
+                "Ağustos 26, 2022 "
+            , "https://audio.buzzsprout.com/zlx11zenw6qm9fif3gt2usaqp605?response-content-disposition=inline&",
+            R.drawable.georgeharrap),
 
-        Language("Yarın, 0 16 Altcoin iİçin Kritik:\nİşte Olacakların Listesi!"
-            ,"kriptokoin: 23 saat once"
-            , "https://kriptokoin.com/16-altcoin-icin-olacaklarin-listesi-3/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.btc),
+        Podcast("\n" +
+                "How Oracles can be Optimistic\n" +
+                "with Hart Lambur, Co-Founder of\n" +
+                "UMA - Ep. 67"
+            ,"Ağustos 05, 2022"
+            , "https://audio.buzzsprout.com/dre6xet8cnr4tw1xmp9mh70bxli0?response-content-disposition=inline&",
+            R.drawable.hartlambur),
 
-        Language("LINK Coin Yükseliyor ve\n" +
-                "Uyarılar Boşa Değilmiş, Peki Şimdi Ne Olacak?"
-            ,"coin-turk: 23 saat once"
-            , "https://coin-turk.com/link-coin-yukseliyor-ve-uyarilar-bosa-degilmis-peki-simdi-ne-olacak?utm_source=coingecko&utm_medium=coingecko&utm_campaign=coingecko&utm_content=coingecko&utm_term=coingecko",
-            R.drawable.chainlink),
+        Language("\n" +
+                "Why is dYdX migrating to Cosmos?\n" +
+                "with Corey Miller, Growth Lead of\n" +
+                "dYdX - Ep. 65"
+            ,"Temmuz 22, 2022 "
+            , "https://audio.buzzsprout.com/dwe40oldfja86vyz6syahlnqev8e?response-content-disposition=inline&",
+            R.drawable.coreymiller),
 
-        Language("Son Zamanların Yıldızı: ERC","404 Coinleri 'Sıradaki Büyük\n" +
-                "Şey' mi? ", "https://kriptokoin.com/yildiz-erc-404-coinleri/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.etherium),
-        Language("İki Dev Şirketten Bitcoin","Tahmini:2024'te Bunlar Olacak",
-            "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.cripto),
+        Language("\n" +
+                "The Future of Cross-Chain Bridging\n" +
+                "with Alex Smirnoy, Co-Founder of\n" +
+                "deBridge- Ep. 66","\n" +
+                "Temmuz 29, 2022" , "https://audio.buzzsprout.com/po6m7zkwtefluhkoboyxqdng91ie?response-content-disposition=inline&",
+            R.drawable.alexsmirnov),
 
-        Language("Ethereum ve Bitcoin'in Piyasa", "Dinamiklerindeki Rolü",
-            "https://www.bitcoinhaber.net/ethereum-ve-bitcoinin-piyasa-dinamiklerindeki-rolu/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.kripto),
 
-        Language("Crypto Capo Altcoin","Patlamasına lşaret Etti! Ancak\n" +
-                "Bir Şarti Var ", "https://coin-turk.com/crypto-capo-altcoin-patlamasina-isaret-etti-ancak-bir-sarti-var?utm_source=coingecko&utm_medium=coingecko&utm_campaign=coingecko&utm_content=coingecko&utm_term=coingecko",
-            R.drawable.kriptoe),
 
-        Language("Bitcoin'in Yükseliş eğilimi.", "Michael van de Poppe'nin\n" +
-                "Analizi ","https://www.bitcoinhaber.net/bitcoinin-yukselis-egilimi-ve-michael-van-de-poppenin-analizi/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.bitcoinhaberi013),
 
-        Language("Son Zamanların Yıldızı: ERC","404 Coinleri 'Sıradaki Büyük\n" +
-                "Şey' mi? ", "https://kriptokoin.com/yildiz-erc-404-coinleri/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.etherium),
-        Language("İki Dev Şirketten Bitcoin","Tahmini:2024'te Bunlar Olacak",
-            "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.cripto),
-
-        Language("Ethereum ve Bitcoin'in Piyasa", "Dinamiklerindeki Rolü",
-            "https://www.bitcoinhaber.net/ethereum-ve-bitcoinin-piyasa-dinamiklerindeki-rolu/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.kripto),
-
-        Language("Crypto Capo Altcoin","Patlamasına lşaret Etti! Ancak\n" +
-                "Bir Şarti Var ", "https://coin-turk.com/crypto-capo-altcoin-patlamasina-isaret-etti-ancak-bir-sarti-var?utm_source=coingecko&utm_medium=coingecko&utm_campaign=coingecko&utm_content=coingecko&utm_term=coingecko",
-            R.drawable.kriptoe),
-
-        Language("Bitcoin'in Yükseliş eğilimi.", "Michael van de Poppe'nin\n" +
-                "Analizi ","https://www.bitcoinhaber.net/bitcoinin-yukselis-egilimi-ve-michael-van-de-poppenin-analizi/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.bitcoinhaberi013),
-
-        Language("Son Zamanların Yıldızı: ERC","404 Coinleri 'Sıradaki Büyük\n" +
-                "Şey' mi? ", "https://kriptokoin.com/yildiz-erc-404-coinleri/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.etherium),
-        Language("İki Dev Şirketten Bitcoin","Tahmini:2024'te Bunlar Olacak",
-            "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.cripto),
-
-        Language("Ethereum ve Bitcoin'in Piyasa", "Dinamiklerindeki Rolü",
-            "https://www.bitcoinhaber.net/ethereum-ve-bitcoinin-piyasa-dinamiklerindeki-rolu/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.kripto),
-
-        Language("Crypto Capo Altcoin","Patlamasına lşaret Etti! Ancak\n" +
-                "Bir Şarti Var ", "https://coin-turk.com/crypto-capo-altcoin-patlamasina-isaret-etti-ancak-bir-sarti-var?utm_source=coingecko&utm_medium=coingecko&utm_campaign=coingecko&utm_content=coingecko&utm_term=coingecko",
-            R.drawable.kriptoe),
-
-        Language("Bitcoin'in Yükseliş eğilimi.", "Michael van de Poppe'nin\n" +
-                "Analizi ","https://www.bitcoinhaber.net/bitcoinin-yukselis-egilimi-ve-michael-van-de-poppenin-analizi/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.bitcoinhaberi013),
-
-        Language("Son Zamanların Yıldızı: ERC","404 Coinleri 'Sıradaki Büyük\n" +
-                "Şey' mi? ", "https://kriptokoin.com/yildiz-erc-404-coinleri/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.etherium),
-        Language("İki Dev Şirketten Bitcoin","Tahmini:2024'te Bunlar Olacak",
-            "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.cripto),
-
-        Language("Ethereum ve Bitcoin'in Piyasa", "Dinamiklerindeki Rolü",
-            "https://www.bitcoinhaber.net/ethereum-ve-bitcoinin-piyasa-dinamiklerindeki-rolu/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.kripto),
-
-        Language("Crypto Capo Altcoin","Patlamasına lşaret Etti! Ancak\n" +
-                "Bir Şarti Var ", "https://coin-turk.com/crypto-capo-altcoin-patlamasina-isaret-etti-ancak-bir-sarti-var?utm_source=coingecko&utm_medium=coingecko&utm_campaign=coingecko&utm_content=coingecko&utm_term=coingecko",
-            R.drawable.kriptoe),
-
-        Language("Bitcoin'in Yükseliş eğilimi.", "Michael van de Poppe'nin\n" +
-                "Analizi ","https://www.bitcoinhaber.net/bitcoinin-yukselis-egilimi-ve-michael-van-de-poppenin-analizi/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.bitcoinhaberi013),
-
-        Language("Son Zamanların Yıldızı: ERC","404 Coinleri 'Sıradaki Büyük\n" +
-                "Şey' mi? ", "https://kriptokoin.com/yildiz-erc-404-coinleri/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.etherium),
-        Language("İki Dev Şirketten Bitcoin","Tahmini:2024'te Bunlar Olacak",
-            "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.cripto),
-
-        Language("Ethereum ve Bitcoin'in Piyasa", "Dinamiklerindeki Rolü",
-            "https://www.bitcoinhaber.net/ethereum-ve-bitcoinin-piyasa-dinamiklerindeki-rolu/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.kripto),
-
-        Language("Crypto Capo Altcoin","Patlamasına lşaret Etti! Ancak\n" +
-                "Bir Şarti Var ", "https://coin-turk.com/crypto-capo-altcoin-patlamasina-isaret-etti-ancak-bir-sarti-var?utm_source=coingecko&utm_medium=coingecko&utm_campaign=coingecko&utm_content=coingecko&utm_term=coingecko",
-            R.drawable.kriptoe),
-
-        Language("Bitcoin'in Yükseliş eğilimi.", "Michael van de Poppe'nin\n" +
-                "Analizi ","https://www.bitcoinhaber.net/bitcoinin-yukselis-egilimi-ve-michael-van-de-poppenin-analizi/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.bitcoinhaberi013),
-
-        Language("Son Zamanların Yıldızı: ERC","404 Coinleri 'Sıradaki Büyük\n" +
-                "Şey' mi? ", "https://kriptokoin.com/yildiz-erc-404-coinleri/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.etherium),
-        Language("İki Dev Şirketten Bitcoin","Tahmini:2024'te Bunlar Olacak",
-            "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.cripto),
-
-        Language("Ethereum ve Bitcoin'in Piyasa", "Dinamiklerindeki Rolü",
-            "https://www.bitcoinhaber.net/ethereum-ve-bitcoinin-piyasa-dinamiklerindeki-rolu/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.kripto),
-
-        Language("Crypto Capo Altcoin","Patlamasına lşaret Etti! Ancak\n" +
-                "Bir Şarti Var ", "https://coin-turk.com/crypto-capo-altcoin-patlamasina-isaret-etti-ancak-bir-sarti-var?utm_source=coingecko&utm_medium=coingecko&utm_campaign=coingecko&utm_content=coingecko&utm_term=coingecko",
-            R.drawable.kriptoe),
-
-        Language("Bitcoin'in Yükseliş eğilimi.", "Michael van de Poppe'nin\n" +
-                "Analizi ","https://www.bitcoinhaber.net/bitcoinin-yukselis-egilimi-ve-michael-van-de-poppenin-analizi/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.bitcoinhaberi013),
-
-        Language("Son Zamanların Yıldızı: ERC","404 Coinleri 'Sıradaki Büyük\n" +
-                "Şey' mi? ", "https://kriptokoin.com/yildiz-erc-404-coinleri/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.etherium),
 
         )
 
@@ -201,10 +113,10 @@ class PodcastFragment : Fragment() {
             spinKitView.visibility = View.GONE
         }, 1000) //
 
-        recyclerView.adapter = LanguageAdapter(languages) { language ->
+        recyclerView.adapter = PodcastAdapter(podcast as List<Podcast>) { podcast ->
             // Tıklanan dilin web sitesine yönlendirme
             val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse(language.url)
+            intent.data = Uri.parse(podcast.url)
             startActivity(intent)
         }
 
