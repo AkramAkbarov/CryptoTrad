@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "279141009519",
+    "project_id": "cryptotrad-b2816",
+    "storage_bucket": "cryptotrad-b2816.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:279141009519:android:82f9d1f5e6bf26aaffe59a",
+        "android_client_info": {
+          "package_name": "com.akramia.cryptotrad"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDi0WRKOYgz-U27hGm6THgDP9cLAFO2Q1I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
