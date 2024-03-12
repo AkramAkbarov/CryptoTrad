@@ -24,7 +24,9 @@ class MaeketAdapter(var context: Context, var list: List<CryptoCurrency>,var typ
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MarketViewHolder {
         return MarketViewHolder(LayoutInflater.from(context).inflate(R.layout.currency_item_layout,parent,false))
+
     }
+
     fun  upDateData(dataItem:List<CryptoCurrency>){
         list=dataItem
         notifyDataSetChanged()

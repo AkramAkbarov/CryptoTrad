@@ -5,21 +5,25 @@ import android.view.LayoutInflater
 
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 
 import com.akramia.cryptotrad.R
 import com.akramia.cryptotrad.databinding.TopCurrencyLayoutBinding
+import com.akramia.cryptotrad.fragment.PiyasaFragmentDirections
 import com.bumptech.glide.Glide
 import com.nexis.cryptoapp.models.CryptoCurrency
 
 
 class PiyasaFragmentAdapter(var context: Context, val list:List<CryptoCurrency>): RecyclerView.Adapter<PiyasaFragmentAdapter.TopMarketViewHolder>() {
-    inner class TopMarketViewHolder(view: View): RecyclerView.ViewHolder(view) {
+    inner class TopMarketViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var binding = TopCurrencyLayoutBinding.bind(view)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TopMarketViewHolder {
-        return  TopMarketViewHolder(LayoutInflater.from(context).inflate(R.layout.top_currency_layout,parent,false))
+        return TopMarketViewHolder(
+            LayoutInflater.from(context).inflate(R.layout.top_currency_layout, parent, false)
+        )
     }
 
     override fun getItemCount(): Int {
@@ -33,23 +37,31 @@ class PiyasaFragmentAdapter(var context: Context, val list:List<CryptoCurrency>)
 
 
         Glide.with(context).load(
-            "https://s2.coinmarketcap.com/static/img/coins/64x64/"+ item.id+".png"
+            "https://s2.coinmarketcap.com/static/img/coins/64x64/" + item.id + ".png"
         ).thumbnail(Glide.with(context).load(R.drawable.spinner))
             .into(holder.binding.topCurrencyImageView)
 
-        if (item.quotes!![0].percentChange24h>0){
+        if (item.quotes!![0].percentChange24h > 0) {
 
             holder.binding.topCurrencyChangeTextView.setTextColor(context.resources.getColor(R.color.green))
-            holder.binding.topCurrencyChangeTextView.text = "+ ${String.format("%.02f",item.quotes[0].percentChange24h)}%"
+            holder.binding.topCurrencyChangeTextView.text =
+                "+ ${String.format("%.02f", item.quotes[0].percentChange24h)}%"
 
-        }else{
+        } else {
 
             holder.binding.topCurrencyChangeTextView.setTextColor(context.resources.getColor(R.color.red))
-            holder.binding.topCurrencyChangeTextView.text = "${String.format("%.02f",item.quotes[0].percentChange24h)}%"
+            holder.binding.topCurrencyChangeTextView.text =
+                "${String.format("%.02f", item.quotes[0].percentChange24h)}%"
         }
 
+        holder.itemView.setOnClickListener {
 
+            Navigation.findNavController(it).navigate(
+                PiyasaFragmentDirections.actionPiyasaFragmentToDetailsFragment(item)
+            )
+
+
+        }
 
     }
-
 }
