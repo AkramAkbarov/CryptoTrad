@@ -1,4 +1,4 @@
-package com.akramia.cryptotrad
+package com.akramia.cryptotrad.loginfragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,9 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.akramia.cryptotrad.databinding.FragmentDetailsBinding
+import com.akramia.cryptotrad.R
 import com.akramia.cryptotrad.databinding.FragmentLogRegBinding
-import com.akramia.cryptotrad.databinding.FragmentPiyasaBinding
 
 class LogRegFragment : Fragment() {
 
@@ -20,7 +19,7 @@ class LogRegFragment : Fragment() {
         binding=FragmentLogRegBinding.inflate(inflater)
 
         binding.imageView7.setOnClickListener{
-            findNavController().navigate(R.id.action_logRegFragment_to_loginFragment)
+            findNavController().navigate(R.id.action_logRegFragment_to_signupFragment2)
         }
 
         // Inflate the layout for this fragment
