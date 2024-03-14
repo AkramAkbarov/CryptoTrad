@@ -26,9 +26,11 @@ class MainActivity : AppCompatActivity() {
                 destination: NavDestination,
                 arguments: Bundle?
             ) {
-                if(destination.id == R.id.logRegFragment) {
+                if(destination.id == R.id.logRegFragment || destination.id == R.id.loginFragment || destination.id == R.id.signupFragment) {
                     binding.bottomBar.visibility = View.GONE
                 }
+                else
+                    binding.bottomBar.visibility = View.VISIBLE
             }
 
         })
