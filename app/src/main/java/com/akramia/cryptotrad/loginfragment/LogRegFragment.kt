@@ -19,7 +19,7 @@ class LogRegFragment : Fragment() {
         binding=FragmentLogRegBinding.inflate(inflater)
 
         binding.imageView7.setOnClickListener{
-            findNavController().navigate(R.id.action_logRegFragment_to_signupFragment2)
+            findNavController().navigate(R.id.action_logRegFragment_to_loginFragment)
         }
 
         // Inflate the layout for this fragment
