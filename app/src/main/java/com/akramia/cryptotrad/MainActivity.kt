@@ -20,17 +20,20 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment= supportFragmentManager.findFragmentById(R.id.fragmentContainerView)
         val navController = navHostFragment!!.findNavController()
 
+        //login ekranda bottombar gozukmesin ve sifreni dogru yazarsa home sayfasina kecince bottom bar gozukur.
         navController.addOnDestinationChangedListener(object : NavController.OnDestinationChangedListener {
             override fun onDestinationChanged(
                 controller: NavController,
                 destination: NavDestination,
                 arguments: Bundle?
             ) {
-                if(destination.id == R.id.logRegFragment || destination.id == R.id.loginFragment || destination.id == R.id.signupFragment) {
+                if( destination.id == R.id.splashFragment || destination.id == R.id.logRegFragment || destination.id == R.id.loginFragment || destination.id == R.id.signupFragment) {
                     binding.bottomBar.visibility = View.GONE
                 }
-                else
+                else {
                     binding.bottomBar.visibility = View.VISIBLE
+
+                }
             }
 
         })

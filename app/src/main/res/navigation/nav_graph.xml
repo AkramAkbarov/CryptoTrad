@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/PiyasaFragment">
+    app:startDestination="@id/splashFragment">
 
 
     <fragment
@@ -92,5 +92,14 @@
         <action
             android:id="@+id/action_signupFragment_to_PiyasaFragment2"
             app:destination="@id/PiyasaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.akramia.cryptotrad.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_logRegFragment"
+            app:destination="@id/logRegFragment" />
     </fragment>
 </navigation>
