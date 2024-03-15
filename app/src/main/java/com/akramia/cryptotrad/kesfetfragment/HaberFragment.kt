@@ -61,128 +61,34 @@ class HaberFragment : Fragment() {
             R.drawable.btc),
 
         Language("LINK Coin Yükseliyor ve\n" +
-                "Uyarılar Boşa Değilmiş, Peki Şimdi Ne Olacak?"
+                "Uyarılar Boşa Değilmiş,Peki Şimdi Ne Olacak?"
             ,"coin-turk: 23 saat once"
             , "https://coin-turk.com/link-coin-yukseliyor-ve-uyarilar-bosa-degilmis-peki-simdi-ne-olacak?utm_source=coingecko&utm_medium=coingecko&utm_campaign=coingecko&utm_content=coingecko&utm_term=coingecko",
             R.drawable.chainlink),
 
-        Language("Son Zamanların Yıldızı: ERC","404 Coinleri 'Sıradaki Büyük\n" +
-                "Şey' mi? ", "https://kriptokoin.com/yildiz-erc-404-coinleri/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.etherium),
-        Language("İki Dev Şirketten Bitcoin","Tahmini:2024'te Bunlar Olacak",
-            "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.cripto),
+        Language("Bitcoin'in ani\n" +
+                "Hareketleri 661 Milyon\n" +
+                "Doları Yok Etti! ",
+                "CoinMuhendisi • 1 gun once ", "https://coinmuhendisi.com/blog/bitcoinin-ani-hareketleri-661-milyon-dolari-yok-etti/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
+            R.drawable.bithareket),
 
-        Language("Ethereum ve Bitcoin'in Piyasa", "Dinamiklerindeki Rolü",
-            "https://www.bitcoinhaber.net/ethereum-ve-bitcoinin-piyasa-dinamiklerindeki-rolu/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.kripto),
+        Language("BNB, Algotech ve\n" +
+                "THORChain: Yükseliş\n" +
+                "İçin Konumlandırılmiş..",
+                "Cointurk• 1 gun önce ",
+            "https://coin-turk.com/bnb-algotech-ve-thorchain-yukselis-icin-konumlandirilmis-uc-kripto-para-birimi?utm_source=coingecko&utm_medium=coingecko&utm_campaign=coingecko&utm_content=coingecko&utm_term=coingecko",
+            R.drawable.bnbimg),
 
-        Language("Crypto Capo Altcoin","Patlamasına lşaret Etti! Ancak\n" +
-                "Bir Şarti Var ", "https://coin-turk.com/crypto-capo-altcoin-patlamasina-isaret-etti-ancak-bir-sarti-var?utm_source=coingecko&utm_medium=coingecko&utm_campaign=coingecko&utm_content=coingecko&utm_term=coingecko",
-            R.drawable.kriptoe),
+        Language("Bitcoin halving\n" +
+                "yaklaşırken madencilik\n" +
+                "zorluğu artıyor ",
+                "CoinTelegraph Turkey 1 gun once",
 
-        Language("Bitcoin'in Yükseliş eğilimi.", "Michael van de Poppe'nin\n" +
-                "Analizi ","https://www.bitcoinhaber.net/bitcoinin-yukselis-egilimi-ve-michael-van-de-poppenin-analizi/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.bitcoinhaberi013),
+            "https://tr.cointelegraph.com/news/bitcoin-btc-mining-difficulty-reaches-new-historical-high-halving-looms?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
+            R.drawable.bitsert),
 
-        Language("Son Zamanların Yıldızı: ERC","404 Coinleri 'Sıradaki Büyük\n" +
-                "Şey' mi? ", "https://kriptokoin.com/yildiz-erc-404-coinleri/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.etherium),
-        Language("İki Dev Şirketten Bitcoin","Tahmini:2024'te Bunlar Olacak",
-            "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.cripto),
 
-        Language("Ethereum ve Bitcoin'in Piyasa", "Dinamiklerindeki Rolü",
-            "https://www.bitcoinhaber.net/ethereum-ve-bitcoinin-piyasa-dinamiklerindeki-rolu/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.kripto),
-
-        Language("Crypto Capo Altcoin","Patlamasına lşaret Etti! Ancak\n" +
-                "Bir Şarti Var ", "https://coin-turk.com/crypto-capo-altcoin-patlamasina-isaret-etti-ancak-bir-sarti-var?utm_source=coingecko&utm_medium=coingecko&utm_campaign=coingecko&utm_content=coingecko&utm_term=coingecko",
-            R.drawable.kriptoe),
-
-        Language("Bitcoin'in Yükseliş eğilimi.", "Michael van de Poppe'nin\n" +
-                "Analizi ","https://www.bitcoinhaber.net/bitcoinin-yukselis-egilimi-ve-michael-van-de-poppenin-analizi/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.bitcoinhaberi013),
-
-        Language("Son Zamanların Yıldızı: ERC","404 Coinleri 'Sıradaki Büyük\n" +
-                "Şey' mi? ", "https://kriptokoin.com/yildiz-erc-404-coinleri/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.etherium),
-        Language("İki Dev Şirketten Bitcoin","Tahmini:2024'te Bunlar Olacak",
-            "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.cripto),
-
-        Language("Ethereum ve Bitcoin'in Piyasa", "Dinamiklerindeki Rolü",
-            "https://www.bitcoinhaber.net/ethereum-ve-bitcoinin-piyasa-dinamiklerindeki-rolu/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.kripto),
-
-        Language("Crypto Capo Altcoin","Patlamasına lşaret Etti! Ancak\n" +
-                "Bir Şarti Var ", "https://coin-turk.com/crypto-capo-altcoin-patlamasina-isaret-etti-ancak-bir-sarti-var?utm_source=coingecko&utm_medium=coingecko&utm_campaign=coingecko&utm_content=coingecko&utm_term=coingecko",
-            R.drawable.kriptoe),
-
-        Language("Bitcoin'in Yükseliş eğilimi.", "Michael van de Poppe'nin\n" +
-                "Analizi ","https://www.bitcoinhaber.net/bitcoinin-yukselis-egilimi-ve-michael-van-de-poppenin-analizi/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.bitcoinhaberi013),
-
-        Language("Son Zamanların Yıldızı: ERC","404 Coinleri 'Sıradaki Büyük\n" +
-                "Şey' mi? ", "https://kriptokoin.com/yildiz-erc-404-coinleri/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.etherium),
-        Language("İki Dev Şirketten Bitcoin","Tahmini:2024'te Bunlar Olacak",
-            "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.cripto),
-
-        Language("Ethereum ve Bitcoin'in Piyasa", "Dinamiklerindeki Rolü",
-            "https://www.bitcoinhaber.net/ethereum-ve-bitcoinin-piyasa-dinamiklerindeki-rolu/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.kripto),
-
-        Language("Crypto Capo Altcoin","Patlamasına lşaret Etti! Ancak\n" +
-                "Bir Şarti Var ", "https://coin-turk.com/crypto-capo-altcoin-patlamasina-isaret-etti-ancak-bir-sarti-var?utm_source=coingecko&utm_medium=coingecko&utm_campaign=coingecko&utm_content=coingecko&utm_term=coingecko",
-            R.drawable.kriptoe),
-
-        Language("Bitcoin'in Yükseliş eğilimi.", "Michael van de Poppe'nin\n" +
-                "Analizi ","https://www.bitcoinhaber.net/bitcoinin-yukselis-egilimi-ve-michael-van-de-poppenin-analizi/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.bitcoinhaberi013),
-
-        Language("Son Zamanların Yıldızı: ERC","404 Coinleri 'Sıradaki Büyük\n" +
-                "Şey' mi? ", "https://kriptokoin.com/yildiz-erc-404-coinleri/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.etherium),
-        Language("İki Dev Şirketten Bitcoin","Tahmini:2024'te Bunlar Olacak",
-            "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.cripto),
-
-        Language("Ethereum ve Bitcoin'in Piyasa", "Dinamiklerindeki Rolü",
-            "https://www.bitcoinhaber.net/ethereum-ve-bitcoinin-piyasa-dinamiklerindeki-rolu/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.kripto),
-
-        Language("Crypto Capo Altcoin","Patlamasına lşaret Etti! Ancak\n" +
-                "Bir Şarti Var ", "https://coin-turk.com/crypto-capo-altcoin-patlamasina-isaret-etti-ancak-bir-sarti-var?utm_source=coingecko&utm_medium=coingecko&utm_campaign=coingecko&utm_content=coingecko&utm_term=coingecko",
-            R.drawable.kriptoe),
-
-        Language("Bitcoin'in Yükseliş eğilimi.", "Michael van de Poppe'nin\n" +
-                "Analizi ","https://www.bitcoinhaber.net/bitcoinin-yukselis-egilimi-ve-michael-van-de-poppenin-analizi/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.bitcoinhaberi013),
-
-        Language("Son Zamanların Yıldızı: ERC","404 Coinleri 'Sıradaki Büyük\n" +
-                "Şey' mi? ", "https://kriptokoin.com/yildiz-erc-404-coinleri/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.etherium),
-        Language("İki Dev Şirketten Bitcoin","Tahmini:2024'te Bunlar Olacak",
-            "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.cripto),
-
-        Language("Ethereum ve Bitcoin'in Piyasa", "Dinamiklerindeki Rolü",
-            "https://www.bitcoinhaber.net/ethereum-ve-bitcoinin-piyasa-dinamiklerindeki-rolu/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.kripto),
-
-        Language("Crypto Capo Altcoin","Patlamasına lşaret Etti! Ancak\n" +
-                "Bir Şarti Var ", "https://coin-turk.com/crypto-capo-altcoin-patlamasina-isaret-etti-ancak-bir-sarti-var?utm_source=coingecko&utm_medium=coingecko&utm_campaign=coingecko&utm_content=coingecko&utm_term=coingecko",
-            R.drawable.kriptoe),
-
-        Language("Bitcoin'in Yükseliş eğilimi.", "Michael van de Poppe'nin\n" +
-                "Analizi ","https://www.bitcoinhaber.net/bitcoinin-yukselis-egilimi-ve-michael-van-de-poppenin-analizi/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.bitcoinhaberi013),
-
-        Language("Son Zamanların Yıldızı: ERC","404 Coinleri 'Sıradaki Büyük\n" +
-                "Şey' mi? ", "https://kriptokoin.com/yildiz-erc-404-coinleri/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.etherium),
+        
 
         )
 
