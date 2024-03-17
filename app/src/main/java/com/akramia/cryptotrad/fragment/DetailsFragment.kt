@@ -1,5 +1,6 @@
 package com.akramia.cryptotrad.fragment
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -13,6 +14,8 @@ import com.akramia.cryptotrad.R
 
 import com.akramia.cryptotrad.databinding.FragmentDetailsBinding
 import com.bumptech.glide.Glide
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.nexis.cryptoapp.models.CryptoCurrency
 
 
@@ -40,7 +43,58 @@ class DetailsFragment : Fragment() {
             findNavController().popBackStack()
         }
 
+        addToStarList(data)
+
         return binding.root
+    }
+
+    var starList: ArrayList<String>? = null
+    var starListIsChecked = false
+
+    private fun addToStarList(data: CryptoCurrency) {
+        readData()
+        starListIsChecked = if (starList!!.contains(data.symbol)){
+            binding.addWatchlistButton.setImageResource(R.drawable.ic_star)
+            true
+        }else{
+            binding.addWatchlistButton.setImageResource(R.drawable.ic_star_outline)
+            false
+        }
+
+        binding.addWatchlistButton.setOnClickListener{
+            starListIsChecked =
+                if (!starListIsChecked){
+                    if (!starList!!.contains(data.symbol)){
+                        starList!!.add(data.symbol)
+                    }
+                    storeData()
+
+                    binding.addWatchlistButton.setImageResource(R.drawable.ic_star)
+                    true
+                }else{
+                    binding.addWatchlistButton.setImageResource(R.drawable.ic_star_outline)
+                    starList!!.remove(data.symbol)
+                    storeData()
+                    false
+                }
+        }
+    }
+
+    private fun storeData(){
+        val sharedPreferences = requireContext().getSharedPreferences("starlist",Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        val gson = Gson()
+        val json = gson.toJson(starList)
+        editor.putString("starlist",json)
+        editor.apply()
+    }
+
+    private fun readData() {
+        val sharedPreferences = requireContext().getSharedPreferences("starlist", Context.MODE_PRIVATE)
+        val gson = Gson()
+        val json = sharedPreferences.getString("starlist",ArrayList<String>().toString())
+        val type = object : TypeToken<ArrayList<String>>() {}.type
+        starList = gson.fromJson(json,type)
     }
 
     private fun setButtonOnClick(item: CryptoCurrency) {

@@ -23,7 +23,11 @@
         android:id="@+id/StarFragment"
         android:name="com.akramia.cryptotrad.fragment.StarFragment"
         android:label="fragment_star"
-        tools:layout="@layout/fragment_star" />
+        tools:layout="@layout/fragment_star" >
+        <action
+            android:id="@+id/action_StarFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/AramaFragment"
         android:name="com.akramia.cryptotrad.fragment.AramaFragment"

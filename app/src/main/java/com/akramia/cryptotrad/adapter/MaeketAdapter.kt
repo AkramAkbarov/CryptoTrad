@@ -12,6 +12,8 @@ import com.akramia.cryptotrad.databinding.CurrencyItemLayoutBinding
 import com.akramia.cryptotrad.fragment.AramaFragment
 import com.akramia.cryptotrad.fragment.AramaFragmentDirections
 import com.akramia.cryptotrad.fragment.PiyasaFragmentDirections
+import com.akramia.cryptotrad.fragment.StarFragment
+import com.akramia.cryptotrad.fragment.StarFragmentDirections
 import com.bumptech.glide.Glide
 import com.nexis.cryptoapp.models.CryptoCurrency
 
@@ -72,6 +74,12 @@ class MaeketAdapter(var context: Context, var list: List<CryptoCurrency>,var typ
                 findNavController(it).navigate(
                     AramaFragmentDirections.actionAramaFragmentToDetailsFragment(item)
                 )
+            }else{
+
+                findNavController(it).navigate(
+                    StarFragmentDirections.actionStarFragmentToDetailsFragment(item)
+                )
+
             }
         }
 
