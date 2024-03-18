@@ -31,6 +31,7 @@ class AramaFragment : Fragment() {
     private lateinit var viewModel: AramaViewModel
     private lateinit var adapter: MaeketAdapter
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -44,6 +45,8 @@ class AramaFragment : Fragment() {
             adapter.upDateData(it)
             binding.spinKitView.visibility = View.GONE
         }
+
+
 
 
 

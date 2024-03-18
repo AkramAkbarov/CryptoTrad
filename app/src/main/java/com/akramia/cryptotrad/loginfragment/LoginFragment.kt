@@ -1,5 +1,6 @@
 package com.akramia.cryptotrad.loginfragment
 
+import android.app.ProgressDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,9 @@ import androidx.navigation.fragment.findNavController
 import com.akramia.cryptotrad.R
 import com.akramia.cryptotrad.databinding.FragmentLoginBinding
 import com.akramia.cryptotrad.databinding.FragmentSignupBinding
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
@@ -24,14 +28,24 @@ class LoginFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding
     private lateinit var navController: NavController
 
+    private companion object{
+        private const val TAG = "LOGIN_OPTIONS_TAG"
+    }
+
+    private lateinit var progressDialog: ProgressDialog
+    private lateinit var  mGoogleSignInClient: GoogleSignInClient
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
         binding = FragmentLoginBinding.inflate(inflater, container, false)
+
+
         // Inflate the layout for this fragment
         return binding.root
+
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -39,9 +53,16 @@ class LoginFragment : Fragment() {
         init(view)
         registerEvents()
 
+        progressDialog = ProgressDialog(requireContext())
+        progressDialog.setTitle("Please wait...")
+        progressDialog.setCanceledOnTouchOutside(false)
 
 
     }
+
+    val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+        .requestEmail()
+        .build()
 
 
 
