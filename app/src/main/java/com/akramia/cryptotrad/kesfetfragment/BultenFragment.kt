@@ -13,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.akramia.cryptotrad.R
 import com.akramia.cryptotrad.adapter.BultenAdapter
 import com.akramia.cryptotrad.adapter.LanguageAdapter
+import com.akramia.cryptotrad.databinding.FragmentBultenBinding
+import com.akramia.cryptotrad.databinding.FragmentHaberBinding
 import com.akramia.cryptotrad.modelsKesfet.Bulten
 import com.akramia.cryptotrad.modelsKesfet.Language
 import com.github.ybq.android.spinkit.SpinKitView
@@ -20,6 +22,7 @@ import com.github.ybq.android.spinkit.SpinKitView
 
 class BultenFragment : Fragment() {
 
+    private lateinit var binding: FragmentBultenBinding
     private lateinit var recyclerView: RecyclerView
     private val bulten = listOf(
         Bulten("\uD83E\uDD8E\uD83D\uDE80 This one's for the hodlers! \uD83D\uDCDC",
@@ -90,8 +93,8 @@ class BultenFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-
-        val view = inflater.inflate(R.layout.fragment_bulten, container, false)
+        binding = FragmentBultenBinding.inflate(inflater, container, false)
+        val view = binding.root
 
         recyclerView = view.findViewById(R.id.BultenRec)
         recyclerView.layoutManager = LinearLayoutManager(context)
@@ -101,14 +104,44 @@ class BultenFragment : Fragment() {
             intent.data = Uri.parse(bulten.url)
             startActivity(intent)
 
-        }
-        val spinKitView = view.findViewById<SpinKitView>(R.id.spinKitView)
-        Handler().postDelayed({
-            spinKitView.visibility = View.GONE
-        }, 1000)
+        }// RecyclerView'ın görünmeden önce SpinKitView'ın görünür olmasını sağlayan kod bloğu
+        binding.spinKitView.visibility = View.VISIBLE
+        recyclerView.visibility = View.GONE
 
+        Handler().postDelayed({
+            binding.spinKitView.visibility = View.GONE
+            recyclerView.visibility = View.VISIBLE
+        }, 2000)
         // Inflate the layout for this fragment
         return view
 
     }
+    /*override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentHaberBinding.inflate(inflater, container, false)
+        val view = binding.root
+
+        recyclerView = view.findViewById(R.id.Haberrecyl)
+        recyclerView.layoutManager = LinearLayoutManager(context)
+
+        // RecyclerView'ın görünmeden önce SpinKitView'ın görünür olmasını sağlayan kod bloğu
+        binding.spinKitView.visibility = View.VISIBLE
+        recyclerView.visibility = View.GONE
+
+        Handler().postDelayed({
+            binding.spinKitView.visibility = View.GONE
+            recyclerView.visibility = View.VISIBLE
+        }, 2000)
+
+        recyclerView.adapter = LanguageAdapter(languages) { language ->
+            // Tıklanan dilin web sitesine yönlendirme
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(language.url)
+            startActivity(intent)
+        }
+
+        return view
+    }*/
 }

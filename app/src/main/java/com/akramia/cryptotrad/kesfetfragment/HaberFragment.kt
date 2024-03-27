@@ -7,17 +7,21 @@ import android.os.Handler
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.akramia.cryptotrad.R
 import com.akramia.cryptotrad.adapter.LanguageAdapter
+import com.akramia.cryptotrad.databinding.FragmentHaberBinding
+import com.akramia.cryptotrad.databinding.FragmentSplashBinding
 import com.akramia.cryptotrad.modelsKesfet.Language
 import com.github.ybq.android.spinkit.SpinKitView
 
 class HaberFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
+    private lateinit var binding: FragmentHaberBinding
     private val languages = listOf(
         Language("İki Dev Şirketten Bitcoin\nTahmini:2024'te Bunlar Olacak","kriptokoin: 9 saat once",
             "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
@@ -96,16 +100,20 @@ class HaberFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_haber, container, false)
+        binding = FragmentHaberBinding.inflate(inflater, container, false)
+        val view = binding.root
 
         recyclerView = view.findViewById(R.id.Haberrecyl)
         recyclerView.layoutManager = LinearLayoutManager(context)
 
+        // RecyclerView'ın görünmeden önce SpinKitView'ın görünür olmasını sağlayan kod bloğu
+        binding.spinKitView.visibility = View.VISIBLE
+        recyclerView.visibility = View.GONE
 
-        val spinKitView = view.findViewById<SpinKitView>(R.id.spinKitView)
         Handler().postDelayed({
-            spinKitView.visibility = View.GONE
-        }, 1000) //
+            binding.spinKitView.visibility = View.GONE
+            recyclerView.visibility = View.VISIBLE
+        }, 2000)
 
         recyclerView.adapter = LanguageAdapter(languages) { language ->
             // Tıklanan dilin web sitesine yönlendirme

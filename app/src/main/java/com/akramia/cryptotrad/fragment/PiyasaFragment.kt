@@ -44,8 +44,12 @@ class PiyasaFragment : Fragment() {
 
 
 
+
+
         return binding.root
     }
+
+
 
     private fun observeViewModel() {
         viewModel.topCurrencyList.observe(viewLifecycleOwner) {

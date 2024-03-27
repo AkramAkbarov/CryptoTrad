@@ -8,6 +8,7 @@ import android.view.View
 import android.view.View.GONE
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.akramia.cryptotrad.R
 import com.akramia.cryptotrad.adapter.MaeketAdapter
 import com.akramia.cryptotrad.apis.ApiInterface
@@ -30,7 +31,19 @@ class StarFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+
+
         binding = FragmentStarBinding.inflate(layoutInflater)
+
+        binding.backFavori.setOnClickListener {
+            findNavController().navigate(
+
+                StarFragmentDirections.actionStarFragmentToPiyasaFragment()
+
+            )
+        }
+
 
         lifecycleScope.launch (Dispatchers.IO){
             val res =  ApiUtilities.getInstance().create(ApiInterface::class.java)
