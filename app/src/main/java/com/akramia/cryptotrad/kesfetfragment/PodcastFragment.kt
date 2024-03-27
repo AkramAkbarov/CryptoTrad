@@ -12,12 +12,16 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.akramia.cryptotrad.R
 import com.akramia.cryptotrad.adapter.PodcastAdapter
+import com.akramia.cryptotrad.databinding.FragmentBlogBinding
+import com.akramia.cryptotrad.databinding.FragmentPodcastBinding
 import com.akramia.cryptotrad.modelsKesfet.Language
 import com.akramia.cryptotrad.modelsKesfet.Podcast
 import com.github.ybq.android.spinkit.SpinKitView
 
 
 class PodcastFragment : Fragment() {
+
+    private lateinit var binding: FragmentPodcastBinding
     private lateinit var recyclerView: RecyclerView
     private val podcast = listOf(
         Podcast("lluvium: The Next Generation of ","\n" +
@@ -102,16 +106,22 @@ class PodcastFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_haber, container, false)
 
-        recyclerView = view.findViewById(R.id.Haberrecyl)
+        binding =  FragmentPodcastBinding.inflate(inflater,container,false)
+        val view = binding.root
+
+        recyclerView = view.findViewById(R.id.PodcastRecyl)
         recyclerView.layoutManager = LinearLayoutManager(context)
 
 
-        val spinKitView = view.findViewById<SpinKitView>(R.id.spinKitView)
+        // RecyclerView'ın görünmeden önce SpinKitView'ın görünür olmasını sağlayan kod bloğu
+        binding.spinKitView.visibility = View.VISIBLE
+        recyclerView.visibility = View.GONE
+
         Handler().postDelayed({
-            spinKitView.visibility = View.GONE
-        }, 1000) //
+            binding.spinKitView.visibility = View.GONE
+            recyclerView.visibility = View.VISIBLE
+        }, 2000)
 
         recyclerView.adapter = PodcastAdapter(podcast as List<Podcast>) { podcast ->
             // Tıklanan dilin web sitesine yönlendirme
@@ -122,4 +132,34 @@ class PodcastFragment : Fragment() {
 
         return view
     }
+
+
+    /*override fun onCreateView(
+       inflater: LayoutInflater, container: ViewGroup?,
+       savedInstanceState: Bundle?
+   ): View? {
+       binding = FragmentHaberBinding.inflate(inflater, container, false)
+       val view = binding.root
+
+       recyclerView = view.findViewById(R.id.Haberrecyl)
+       recyclerView.layoutManager = LinearLayoutManager(context)
+
+       // RecyclerView'ın görünmeden önce SpinKitView'ın görünür olmasını sağlayan kod bloğu
+       binding.spinKitView.visibility = View.VISIBLE
+       recyclerView.visibility = View.GONE
+
+       Handler().postDelayed({
+           binding.spinKitView.visibility = View.GONE
+           recyclerView.visibility = View.VISIBLE
+       }, 2000)
+
+       recyclerView.adapter = LanguageAdapter(languages) { language ->
+           // Tıklanan dilin web sitesine yönlendirme
+           val intent = Intent(Intent.ACTION_VIEW)
+           intent.data = Uri.parse(language.url)
+           startActivity(intent)
+       }
+
+       return view
+   }*/
 }
