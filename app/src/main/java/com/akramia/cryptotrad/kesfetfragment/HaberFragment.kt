@@ -100,17 +100,20 @@ class HaberFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_haber, container, false)
-        binding =FragmentHaberBinding.inflate(layoutInflater)
+        binding = FragmentHaberBinding.inflate(inflater, container, false)
+        val view = binding.root
 
         recyclerView = view.findViewById(R.id.Haberrecyl)
         recyclerView.layoutManager = LinearLayoutManager(context)
 
+        // RecyclerView'ın görünmeden önce SpinKitView'ın görünür olmasını sağlayan kod bloğu
+        binding.spinKitView.visibility = View.VISIBLE
+        recyclerView.visibility = View.GONE
 
-        val spinKitView = view.findViewById<SpinKitView>(R.id.spinKitView)
         Handler().postDelayed({
-            binding.spinKitView.visibility = GONE
-        }, 1000) //
+            binding.spinKitView.visibility = View.GONE
+            recyclerView.visibility = View.VISIBLE
+        }, 2000)
 
         recyclerView.adapter = LanguageAdapter(languages) { language ->
             // Tıklanan dilin web sitesine yönlendirme
