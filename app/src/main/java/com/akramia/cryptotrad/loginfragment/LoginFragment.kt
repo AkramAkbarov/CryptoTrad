@@ -63,6 +63,10 @@ class LoginFragment : Fragment() {
             findNavController().navigate(R.id.action_loginFragment_to_signupFragment)
         }
 
+        binding.textView4.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_recoveryFragment)
+        }
+
         binding.loginButton.setOnClickListener {
             val email = binding.emaillogin.text.toString().trim()
             val password = binding.passLog.text.toString().trim()
@@ -107,6 +111,8 @@ class LoginFragment : Fragment() {
             }
         }
     }
+
+
 
     private fun firebaseAuthWithGoogle(idToken: String) {
         val credential = GoogleAuthProvider.getCredential(idToken, null)

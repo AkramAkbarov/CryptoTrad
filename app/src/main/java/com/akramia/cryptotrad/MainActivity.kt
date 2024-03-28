@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
                 destination: NavDestination,
                 arguments: Bundle?
             ) {
-                if( destination.id == R.id.splashFragment || destination.id == R.id.logRegFragment || destination.id == R.id.loginFragment || destination.id == R.id.signupFragment) {
+                if( destination.id == R.id.splashFragment || destination.id == R.id.logRegFragment || destination.id == R.id.loginFragment || destination.id == R.id.signupFragment||destination.id == R.id.recoveryFragment) {
                     binding.bottomBar.visibility = View.GONE
                 }
                 else {
