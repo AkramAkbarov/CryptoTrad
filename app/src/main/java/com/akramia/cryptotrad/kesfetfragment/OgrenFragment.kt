@@ -1,5 +1,6 @@
 package com.akramia.cryptotrad.kesfetfragment
 
+import ImageAdapter
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -12,7 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.akramia.cryptotrad.R
-import com.akramia.cryptotrad.adapter.ImageAdapter
+
 import com.akramia.cryptotrad.adapter.LanguageAdapter
 import com.akramia.cryptotrad.databinding.FragmentBlogBinding
 import com.akramia.cryptotrad.databinding.FragmentOgrenBinding
@@ -47,6 +48,12 @@ class OgrenFragment : Fragment() {
         R.drawable.bitcoinabd
     )
 
+    private val urlList = listOf(
+        "https://www.bitcoinhaber.net/ethereum-ve-bitcoinin-piyasa-dinamiklerindeki-rolu/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
+        "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
+        "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
+    )
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -76,8 +83,9 @@ class OgrenFragment : Fragment() {
             startActivity(intent)
         }
 
+
         // ViewPager2 için adapter ayarlayın
-        val adapter = ImageAdapter(imageList)
+        val adapter = ImageAdapter(imageList,urlList)
         binding.viewPager.adapter = adapter
 
         // ViewPager2 için PageTransformer ayarlayın
