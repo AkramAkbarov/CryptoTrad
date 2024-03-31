@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#16181c"
+    android:background="#013C2D"
     tools:context=".loginfragment.LoginFragment">
 
 
@@ -85,7 +85,7 @@
                     android:layout_marginTop="12dp"
                     android:layout_marginBottom="12dp"
                     android:layout_marginEnd="24dp"
-                    android:background="@drawable/login_button_bg"
+                    android:background="@drawable/login_button_bg_chat"
                     android:text="Login"
                     android:textColor="@color/white"
                     android:textSize="18sp"
@@ -100,7 +100,7 @@
 
                     android:layout_marginEnd="24dp"
                     android:layout_marginBottom="12dp"
-                    android:background="@drawable/login_button_bg"
+                    android:background="@drawable/login_button_bg_chat"
 
                     android:text="Back"
                     android:textColor="@color/white"

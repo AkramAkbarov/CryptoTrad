@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/top_gainersssss_bg"
+    android:background="@drawable/top_gainersssssrecy_bg_chat"
     tools:context=".fragment.StarFragment">
 
     <TableLayout
@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="55dp"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/top_gainersssss_tablayout_bg">
+        android:background="#004D40">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -22,7 +22,7 @@
                 android:id="@+id/backFavori"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_backfav"
+                android:src="@drawable/ic_back"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
 
@@ -34,7 +34,7 @@
                 android:layout_width="51dp"
                 android:layout_height="wrap_content"
                 android:text="Favori"
-                android:textColor="#2979FF"
+                android:textColor="@color/text_color"
                 android:textSize="18dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"

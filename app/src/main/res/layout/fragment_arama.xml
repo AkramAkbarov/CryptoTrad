@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/top_gainersssss_bg"
+    android:background="@drawable/top_gainersssssrecy_bg_chat"
     android:paddingLeft="5dp"
     android:paddingRight="5dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
