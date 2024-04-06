@@ -49,6 +49,11 @@ class MaeketAdapter(var context: Context, var list: List<CryptoCurrency>,var typ
         ).thumbnail(Glide.with(context).load(R.drawable.spinner))
             .into(holder.binding.currencyImageView)
 
+        Glide.with(context).load(
+            "https://s3.coinmarketcap.com/generated/sparklines/web/7d/usd/"+ item.id+".png"
+        ).thumbnail(Glide.with(context).load(R.drawable.spinner))
+            .into(holder.binding.currencyChartImageView)
+
 
 
         holder.binding.currencyPriceTextView.text =

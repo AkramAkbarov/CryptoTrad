@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.akramia.cryptotrad.R
@@ -15,6 +16,7 @@ import com.akramia.cryptotrad.apis.ApiInterface
 import com.akramia.cryptotrad.apis.ApiUtilities
 import com.akramia.cryptotrad.databinding.FragmentDetailsBinding
 import com.akramia.cryptotrad.databinding.FragmentStarBinding
+import com.akramia.cryptotrad.viewmodel.StarViewModel
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.nexis.cryptoapp.models.CryptoCurrency
@@ -24,58 +26,44 @@ import kotlinx.coroutines.withContext
 
 class StarFragment : Fragment() {
     private lateinit var binding: FragmentStarBinding
-    private lateinit var starList: ArrayList<String>
     private lateinit var starListItem: ArrayList<CryptoCurrency>
+    private val viewModel: StarViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-
-
         binding = FragmentStarBinding.inflate(layoutInflater)
 
         binding.backFavori.setOnClickListener {
             findNavController().navigate(
-
                 StarFragmentDirections.actionStarFragmentToPiyasaFragment()
-
             )
         }
 
+        lifecycleScope.launch(Dispatchers.IO) {
+            val res = ApiUtilities.getInstance().create(ApiInterface::class.java).getMarketData()
 
-        lifecycleScope.launch (Dispatchers.IO){
-            val res =  ApiUtilities.getInstance().create(ApiInterface::class.java)
-                .getMarketData()
-
-            if (res.body() != null){
-                withContext(Dispatchers.Main){
+            if (res.body() != null) {
+                withContext(Dispatchers.Main) {
+                    val starList = viewModel.getStarList()
                     starListItem = ArrayList()
-                    starListItem.clear()
 
-                    for (starData in starList){
-                        for (item in res.body()!!.data.cryptoCurrencyList){
-                            if (starData == item.symbol){
+                    for (starData in starList) {
+                        for (item in res.body()!!.data.cryptoCurrencyList) {
+                            if (starData == item.symbol) {
                                 starListItem.add(item)
                             }
                         }
                     }
-                    binding.spinKitView.visibility = GONE
-                    binding.watchlistRecyclerView.adapter = MaeketAdapter(requireContext(),starListItem,"starlist")
+
+                    binding.spinKitView.visibility = View.GONE
+                    binding.watchlistRecyclerView.adapter = MaeketAdapter(requireContext(), starListItem, "starlist")
                 }
             }
         }
 
-        readData()
         return binding.root
-    }
-
-    private fun readData() {
-        val sharedPreferences = requireContext().getSharedPreferences("starlist", Context.MODE_PRIVATE)
-        val gson = Gson()
-        val json = sharedPreferences.getString("starlist", ArrayList<String>().toString())
-        val type = object : TypeToken<ArrayList<String>>(){}.type
-        starList = gson.fromJson(json, type)
     }
 }

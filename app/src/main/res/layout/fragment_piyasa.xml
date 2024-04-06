@@ -28,17 +28,7 @@
                 android:layout_height="match_parent">
 
                 <!-- İlk İkon için ImageView -->
-                <ImageView
-                    android:id="@+id/imageView4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:padding="8dp"
-                    android:src="@drawable/ic_notification"
-                    android:tint="#2979FF"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+
 
 
                 <!-- İkinci İkon için ImageView -->
@@ -51,7 +41,8 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/textView"
                     app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toStartOf="@+id/imageView4"
+
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.483" />
 
@@ -163,7 +154,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/currencyRecyclerView"
-            android:layout_width="406dp"
+            android:layout_width="match_parent"
 
             android:layout_height="567dp"
             android:orientation="vertical"
