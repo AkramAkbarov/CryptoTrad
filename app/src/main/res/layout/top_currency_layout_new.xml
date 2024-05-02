@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:id="@+id/topCurrencyCardView"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:layout_width="220dp"
+    app:cardBackgroundColor="#0F2510"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="8dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topCurrencyConstraintLayout"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="@drawable/top_gainersssssrecy_bg"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/topCurrencyImageView"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/topCurrencyChangeTextViewtop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="152dp"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/topCurrencyImageView"
+            app:layout_constraintTop_toBottomOf="@+id/topCurrencyImageView"
+            tools:text="525.53" />
+
+        <ImageView
+            android:id="@+id/currencyChangeImageViewtop"
+            android:layout_width="19dp"
+            android:layout_height="21dp"
+            app:layout_constraintBottom_toBottomOf="@+id/currencyChangeTextViewtop"
+            app:layout_constraintEnd_toStartOf="@+id/currencyChangeTextViewtop"
+            app:layout_constraintStart_toStartOf="@+id/topCurrencyChangeTextViewtop"
+            app:layout_constraintTop_toTopOf="@+id/currencyChangeTextViewtop"
+            tools:srcCompat="@drawable/ic_caret_up" />
+
+        <TextView
+            android:id="@+id/currencyChangeTextViewtop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.184"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topCurrencyChangeTextViewtop"
+            tools:text="12.45" />
+
+        <TextView
+            android:id="@+id/topCurrencyNameTextView"
+            android:layout_width="42dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="56dp"
+            android:layout_marginEnd="72dp"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/topCurrencyImageView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.04"
+            tools:text="Bitcoin" />
+
+        <ImageView
+            android:id="@+id/topcurrencyChartImageView"
+            android:layout_width="82dp"
+            android:layout_height="68dp"
+            android:layout_marginEnd="36dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/topCurrencyChangeTextViewtop"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.937"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

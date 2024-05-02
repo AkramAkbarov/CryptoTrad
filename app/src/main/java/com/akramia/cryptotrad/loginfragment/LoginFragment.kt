@@ -82,6 +82,8 @@ class LoginFragment : Fragment() {
                         }
                     }
             }
+
+
         }
 
         binding.imageView6.setOnClickListener {

@@ -28,6 +28,8 @@ class AramaViewModel : ViewModel() {
     }
 
     fun searchCoin(query: String) {
+
+
         val data = cryptoCurrencyList.value?.filter { item ->
             val coinName = item.name.lowercase(Locale.getDefault())
             val coinSymbol = item.symbol.lowercase(Locale.getDefault())

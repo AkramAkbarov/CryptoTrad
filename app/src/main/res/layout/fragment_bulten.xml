@@ -10,14 +10,14 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/BultenRec"
         android:layout_width="match_parent"
-        android:layout_height="633dp"
+        android:layout_height="614dp"
         android:layout_margin="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.836"
+        app:layout_constraintVertical_bias="0.632"
         tools:listitem="@layout/bulten_item" />
 
     <com.github.ybq.android.spinkit.SpinKitView
@@ -32,6 +32,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 
 
