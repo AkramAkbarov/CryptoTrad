@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#16181c"
+    android:background="#013C2D"
     tools:context=".loginfragment.LoginFragment">
 
 
@@ -43,7 +43,7 @@
                 android:textSize="20dp" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="326dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="24dp"
@@ -77,7 +77,7 @@
 
 
                 <Button
-                    android:id="@+id/resetPasswordButton"
+                    android:id="@+id/loginButton"
                     style="@android:style/Widget.Button"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
@@ -86,7 +86,7 @@
                     android:layout_marginBottom="12dp"
                     android:layout_marginEnd="24dp"
                     android:background="@drawable/login_button_bg"
-                    android:text="Reset Password"
+                    android:text="Login"
                     android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold" />

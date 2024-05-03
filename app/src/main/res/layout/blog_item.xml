@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:paddingTop="12dp"
         android:paddingBottom="12dp"
-        android:background="@drawable/top_gainersssssrecy_bg"
+        android:background="@drawable/top_gainersssssrecy_bg_chat"
         >
 
 
@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:text="Title"
-            android:textColor="@color/white"
+            android:textColor="@color/text_color"
             android:textSize="15sp"
             app:layout_constraintBottom_toTopOf="@+id/textView2"
             app:layout_constraintEnd_toEndOf="parent"
