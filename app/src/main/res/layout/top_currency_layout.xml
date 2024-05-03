@@ -15,7 +15,7 @@
         android:id="@+id/topCurrencyConstraintLayout"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:background="@drawable/top_gainersssssrecy_bg_chat_recy"
+        android:background="@drawable/top_gainersssssrecy_bg"
         android:padding="12dp">
 
         <ImageView

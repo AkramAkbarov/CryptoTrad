@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/top_gainersssssrecy_bg_chat">
+    android:background="@drawable/top_gainersssssrecy_bg">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/detailAppbar"
@@ -220,7 +220,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/top_gainersssssrecy_bg_chat"
+        android:background="@drawable/top_gainersssssrecy_bg"
         android:paddingStart="12dp"
         android:paddingTop="8dp"
         android:paddingEnd="12dp"

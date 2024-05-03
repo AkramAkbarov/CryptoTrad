@@ -19,7 +19,7 @@
     android:layout_height="wrap_content"
     android:paddingTop="12dp"
     android:paddingBottom="12dp"
-    android:background="@drawable/top_gainersssssrecy_bg_chat_recy"
+    android:background="@drawable/top_gainersssssrecy_bg"
     >
 
 

@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:elevation="12dp"
-        app:backgroundColor="#004D40"
+        app:backgroundColor="#000837"
         app:cornerRadius="10dp"
         app:iconMargin="8dp"
         app:iconSize="24dp"
