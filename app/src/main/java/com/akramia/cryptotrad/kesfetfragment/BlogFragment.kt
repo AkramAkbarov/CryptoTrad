@@ -23,21 +23,33 @@ class BlogFragment : Fragment() {
     private lateinit var binding: FragmentBlogBinding
     private lateinit var recyclerView: RecyclerView
     private val blog = listOf(
-        Language("İki Dev Şirketten Bitcoin","Bobby Ong",
+        Language(
+            "İki Dev Şirketten Bitcoin", "Bobby Ong",
             "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.cripto),
+            R.drawable.cripto
+        ),
 
-        Language("Ethereum ve Bitcoin'in Piyasa", "Bobby Ong",
+        Language(
+            "Ethereum ve Bitcoin'in Piyasa", "Bobby Ong",
             "https://www.bitcoinhaber.net/ethereum-ve-bitcoinin-piyasa-dinamiklerindeki-rolu/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.kripto),
+            R.drawable.kripto
+        ),
 
-        Language("Crypto Capo Altcoin","Patlamasına lşaret Etti! Ancak\n" +
-                "Bir Şarti Var ", "https://coin-turk.com/crypto-capo-altcoin-patlamasina-isaret-etti-ancak-bir-sarti-var?utm_source=coingecko&utm_medium=coingecko&utm_campaign=coingecko&utm_content=coingecko&utm_term=coingecko",
-            R.drawable.kriptoe),
+        Language(
+            "Crypto Capo Altcoin",
+            "Patlamasına lşaret Etti! Ancak\n" +
+                    "Bir Şarti Var ",
+            "https://coin-turk.com/crypto-capo-altcoin-patlamasina-isaret-etti-ancak-bir-sarti-var?utm_source=coingecko&utm_medium=coingecko&utm_campaign=coingecko&utm_content=coingecko&utm_term=coingecko",
+            R.drawable.kriptoe
+        ),
 
-        Language("Bitcoin'in Yükseliş eğilimi.", "Michael van de Poppe'nin\n" +
-                "Analizi ","https://www.bitcoinhaber.net/bitcoinin-yukselis-egilimi-ve-michael-van-de-poppenin-analizi/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.bitcoinhaberi013),
+        Language(
+            "Bitcoin'in Yükseliş eğilimi.",
+            "Michael van de Poppe'nin\n" +
+                    "Analizi ",
+            "https://www.bitcoinhaber.net/bitcoinin-yukselis-egilimi-ve-michael-van-de-poppenin-analizi/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
+            R.drawable.bitcoinhaberi013
+        ),
     )
 
     override fun onCreateView(
@@ -45,12 +57,12 @@ class BlogFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        binding=FragmentBlogBinding.inflate(inflater,container,false)
+        binding = FragmentBlogBinding.inflate(inflater, container, false)
 
-       val view= binding.root
+        val view = binding.root
 
         recyclerView = view.findViewById(R.id.BlogRec)
-        recyclerView.layoutManager=LinearLayoutManager(context)
+        recyclerView.layoutManager = LinearLayoutManager(context)
 
         // RecyclerView'ın görünmeden önce SpinKitView'ın görünür olmasını sağlayan kod bloğu
         binding.spinKitView.visibility = View.VISIBLE
@@ -61,7 +73,7 @@ class BlogFragment : Fragment() {
             recyclerView.visibility = View.VISIBLE
         }, 2000)
 
-        recyclerView.adapter  = LanguageAdapter(blog){blog ->
+        recyclerView.adapter = LanguageAdapter(blog) { blog ->
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data = Uri.parse(blog.url)
             startActivity(intent)

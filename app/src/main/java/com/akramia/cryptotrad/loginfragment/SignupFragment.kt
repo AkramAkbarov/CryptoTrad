@@ -56,13 +56,15 @@ class signupFragment : Fragment() {
     private fun registerUser(email: String, pass: String) {
         firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener {
             if (it.isSuccessful) {
-                val databaseReference = FirebaseDatabase.getInstance().reference.child("users").child(firebaseAuth.currentUser?.uid.toString())
+                val databaseReference = FirebaseDatabase.getInstance().reference.child("users")
+                    .child(firebaseAuth.currentUser?.uid.toString())
                 val user = mapOf("email" to email)
                 databaseReference.setValue(user).addOnCompleteListener { result ->
                     if (result.isSuccessful) {
                         navController.navigate(R.id.action_signupFragment_to_loginFragment) // Başarılı olursa yönlendirme
                     } else {
-                        Toast.makeText(context, result.exception.toString(), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, result.exception.toString(), Toast.LENGTH_SHORT)
+                            .show()
                     }
                 }
             } else {
@@ -75,7 +77,7 @@ class signupFragment : Fragment() {
         navController = Navigation.findNavController(view)
         firebaseAuth = FirebaseAuth.getInstance()
     }
-    }
+}
 
 /*override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

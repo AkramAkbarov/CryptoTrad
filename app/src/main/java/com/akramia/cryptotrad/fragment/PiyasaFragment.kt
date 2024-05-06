@@ -48,7 +48,6 @@ class PiyasaFragment : Fragment() {
     }
 
 
-
     private fun observeViewModel() {
         viewModel.topCurrencyList.observe(viewLifecycleOwner) {
             binding.topCurrencyRecyclerView.adapter = PiyasaFragmentAdapter(requireContext(), it)

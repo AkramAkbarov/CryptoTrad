@@ -7,7 +7,8 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
 class StarViewModel(application: Application) : AndroidViewModel(application) {
-    private val sharedPreferences = application.getSharedPreferences("starlist", Context.MODE_PRIVATE)
+    private val sharedPreferences =
+        application.getSharedPreferences("starlist", Context.MODE_PRIVATE)
     private val gson = Gson()
     private val starListType = object : TypeToken<ArrayList<String>>() {}.type
 

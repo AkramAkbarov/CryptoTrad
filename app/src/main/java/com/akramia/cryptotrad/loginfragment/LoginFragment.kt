@@ -78,7 +78,8 @@ class LoginFragment : Fragment() {
                             Toast.makeText(context, "Login Successfully", Toast.LENGTH_SHORT).show()
                             navController.navigate(R.id.action_loginFragment_to_PiyasaFragment)
                         } else {
-                            Toast.makeText(context, task.exception?.message, Toast.LENGTH_SHORT).show()
+                            Toast.makeText(context, task.exception?.message, Toast.LENGTH_SHORT)
+                                .show()
                         }
                     }
             }
@@ -109,11 +110,14 @@ class LoginFragment : Fragment() {
                 // Google hesabıyla Firebase'e oturum açma
                 firebaseAuthWithGoogle(account.idToken!!)
             } catch (e: ApiException) {
-                Toast.makeText(context, "Google Sign In Failed: ${e.statusCode}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    context,
+                    "Google Sign In Failed: ${e.statusCode}",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
     }
-
 
 
     private fun firebaseAuthWithGoogle(idToken: String) {
@@ -129,7 +133,7 @@ class LoginFragment : Fragment() {
                 }
             }
     }
-    }
+}
 /*binding.btn.setOnClickListener {
             val email= binding.emailEt.text.toString().trim()
             val password=binding.passEt.text.toString().trim()

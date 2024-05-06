@@ -25,17 +25,17 @@ class SplashFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        binding= FragmentSplashBinding.inflate(inflater)
+        binding = FragmentSplashBinding.inflate(inflater)
         playlottie()
         return binding.root
     }
 
 
-    private fun playlottie(){
-        binding.animationView.repeatCount=0
+    private fun playlottie() {
+        binding.animationView.repeatCount = 0
         binding.animationView.playAnimation()
 
-        binding.animationView.addAnimatorListener(object: Animator.AnimatorListener {
+        binding.animationView.addAnimatorListener(object : Animator.AnimatorListener {
             override fun onAnimationStart(p0: Animator) {
 
             }

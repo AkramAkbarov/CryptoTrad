@@ -1,34 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.PiyasaFragment">
 
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/marketFragment"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/marketFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/top_gainersssss_bg"
-        >
+        android:background="@drawable/top_gainersssss_bg">
 
         <TableLayout
             android:id="@+id/PiyasaTabLayout"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            app:layout_constraintTop_toTopOf="parent"
             android:background="#000837"
+            app:layout_constraintTop_toTopOf="parent"
 
             >
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <!-- İlk İkon için ImageView -->
-
 
 
                 <!-- İkinci İkon için ImageView -->
@@ -50,17 +49,15 @@
                     android:layout_width="107dp"
                     android:layout_height="wrap_content"
                     android:text="Crypto Trad"
+                    android:textAlignment="center"
                     android:textColor="#2979FF"
                     android:textSize="18dp"
-                    android:textAlignment="center"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.483" />
-
-
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -127,11 +124,11 @@
             tools:ignore="MissingConstraints" />
 
         <com.github.ybq.android.spinkit.SpinKitView
-            style="@style/SpinKitView.ThreeBounce"
             android:id="@+id/spinKitView"
-            android:layout_gravity="center"
-            android:layout_height="wrap_content"
+            style="@style/SpinKitView.ThreeBounce"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:visibility="visible"
             app:SpinKit_Color="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -157,8 +154,6 @@
             tools:listitem="@layout/currency_item_layout" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

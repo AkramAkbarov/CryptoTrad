@@ -14,23 +14,23 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding= ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val navHostFragment= supportFragmentManager.findFragmentById(R.id.fragmentContainerView)
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView)
         val navController = navHostFragment!!.findNavController()
 
         //login ekranda bottombar gozukmesin ve sifreni dogru yazarsa home sayfasina kecince bottom bar gozukur.
-        navController.addOnDestinationChangedListener(object : NavController.OnDestinationChangedListener {
+        navController.addOnDestinationChangedListener(object :
+            NavController.OnDestinationChangedListener {
             override fun onDestinationChanged(
                 controller: NavController,
                 destination: NavDestination,
                 arguments: Bundle?
             ) {
-                if( destination.id == R.id.splashFragment || destination.id == R.id.logRegFragment || destination.id == R.id.loginFragment || destination.id == R.id.signupFragment||destination.id == R.id.recoveryFragment) {
+                if (destination.id == R.id.splashFragment || destination.id == R.id.logRegFragment || destination.id == R.id.loginFragment || destination.id == R.id.signupFragment || destination.id == R.id.recoveryFragment) {
                     binding.bottomBar.visibility = View.GONE
-                }
-                else {
+                } else {
                     binding.bottomBar.visibility = View.VISIBLE
 
                 }
@@ -38,9 +38,9 @@ class MainActivity : AppCompatActivity() {
 
         })
 
-        val popupMenu = PopupMenu(this,null)
+        val popupMenu = PopupMenu(this, null)
         popupMenu.inflate(R.menu.bottom_nav_menu)
-        binding.bottomBar.setupWithNavController(popupMenu.menu,navController)
+        binding.bottomBar.setupWithNavController(popupMenu.menu, navController)
 
 
     }

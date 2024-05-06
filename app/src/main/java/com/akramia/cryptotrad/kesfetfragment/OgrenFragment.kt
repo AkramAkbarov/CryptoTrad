@@ -25,24 +25,36 @@ class OgrenFragment : Fragment() {
     private lateinit var binding: FragmentOgrenBinding
     private lateinit var recyclerView: RecyclerView
     private val ogren = listOf(
-        Language("What Is Polkadot 2.0 and DOT?","CoinGecko",
+        Language(
+            "What Is Polkadot 2.0 and DOT?", "CoinGecko",
             "https://www.coingecko.com/learn/polkadot-dot-crypto-2-0?utm_source=explore&utm_medium=app",
-            R.drawable.ogrenfoto),
+            R.drawable.ogrenfoto
+        ),
 
-        Language("Degen Chain and\n" +
-                "DEGEN Overview: The\n" +
-                "Community-Driven La...", "Sankrit K",
+        Language(
+            "Degen Chain and\n" +
+                    "DEGEN Overview: The\n" +
+                    "Community-Driven La...", "Sankrit K",
             "https://www.bitcoinhaber.net/ethereum-ve-bitcoinin-piyasa-dinamiklerindeki-rolu/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.kripto),
+            R.drawable.kripto
+        ),
 
-        Language("Guide on Earning\n" +
-                "deBridge Points and\n" +
-                "Improving Airdrop Elig...","Stephanie Goh", "https://coin-turk.com/crypto-capo-altcoin-patlamasina-isaret-etti-ancak-bir-sarti-var?utm_source=coingecko&utm_medium=coingecko&utm_campaign=coingecko&utm_content=coingecko&utm_term=coingecko",
-            R.drawable.kriptoe),
+        Language(
+            "Guide on Earning\n" +
+                    "deBridge Points and\n" +
+                    "Improving Airdrop Elig...",
+            "Stephanie Goh",
+            "https://coin-turk.com/crypto-capo-altcoin-patlamasina-isaret-etti-ancak-bir-sarti-var?utm_source=coingecko&utm_medium=coingecko&utm_campaign=coingecko&utm_content=coingecko&utm_term=coingecko",
+            R.drawable.kriptoe
+        ),
 
-        Language("API3's \"Netflix Moment\" and the Changing Oracle Land...", "CoinGecko" +
-                "Analizi ","https://www.bitcoinhaber.net/bitcoinin-yukselis-egilimi-ve-michael-van-de-poppenin-analizi/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.bitcoinhaberi013),
+        Language(
+            "API3's \"Netflix Moment\" and the Changing Oracle Land...",
+            "CoinGecko" +
+                    "Analizi ",
+            "https://www.bitcoinhaber.net/bitcoinin-yukselis-egilimi-ve-michael-van-de-poppenin-analizi/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
+            R.drawable.bitcoinhaberi013
+        ),
     )
     private lateinit var viewPager: ViewPager2
     private val imageList = listOf(
@@ -88,7 +100,7 @@ class OgrenFragment : Fragment() {
 
 
         // ViewPager2 için adapter ayarlayın
-        val adapter = ImageAdapter(imageList,urlList)
+        val adapter = ImageAdapter(imageList, urlList)
         binding.viewPager.adapter = adapter
 
         // ViewPager2 için PageTransformer ayarlayın

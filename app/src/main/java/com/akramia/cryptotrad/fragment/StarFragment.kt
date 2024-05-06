@@ -59,7 +59,8 @@ class StarFragment : Fragment() {
                     }
 
                     binding.spinKitView.visibility = View.GONE
-                    binding.watchlistRecyclerView.adapter = MaeketAdapter(requireContext(), starListItem, "starlist")
+                    binding.watchlistRecyclerView.adapter =
+                        MaeketAdapter(requireContext(), starListItem, "starlist")
                 }
             }
         }

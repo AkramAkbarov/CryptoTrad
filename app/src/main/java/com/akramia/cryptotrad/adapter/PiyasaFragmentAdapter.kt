@@ -15,7 +15,8 @@ import com.bumptech.glide.Glide
 import com.nexis.cryptoapp.models.CryptoCurrency
 
 
-class PiyasaFragmentAdapter(var context: Context, val list:List<CryptoCurrency>): RecyclerView.Adapter<PiyasaFragmentAdapter.TopMarketViewHolder>() {
+class PiyasaFragmentAdapter(var context: Context, val list: List<CryptoCurrency>) :
+    RecyclerView.Adapter<PiyasaFragmentAdapter.TopMarketViewHolder>() {
     inner class TopMarketViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var binding = TopCurrencyLayoutBinding.bind(view)
     }

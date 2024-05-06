@@ -1,4 +1,5 @@
 package com.akramia.cryptotrad.adapter
+
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -18,19 +19,22 @@ import com.bumptech.glide.Glide
 import com.nexis.cryptoapp.models.CryptoCurrency
 
 
-class MaeketAdapter(var context: Context, var list: List<CryptoCurrency>,var type: String):RecyclerView.Adapter<MaeketAdapter.MarketViewHolder>(){
+class MaeketAdapter(var context: Context, var list: List<CryptoCurrency>, var type: String) :
+    RecyclerView.Adapter<MaeketAdapter.MarketViewHolder>() {
 
-    inner class MarketViewHolder(view: View):RecyclerView.ViewHolder(view){
+    inner class MarketViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var binding = CurrencyItemLayoutBinding.bind(view)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MarketViewHolder {
-        return MarketViewHolder(LayoutInflater.from(context).inflate(R.layout.currency_item_layout,parent,false))
+        return MarketViewHolder(
+            LayoutInflater.from(context).inflate(R.layout.currency_item_layout, parent, false)
+        )
 
     }
 
-    fun  upDateData(dataItem:List<CryptoCurrency>){
-        list=dataItem
+    fun upDateData(dataItem: List<CryptoCurrency>) {
+        list = dataItem
         notifyDataSetChanged()
 
     }
@@ -41,45 +45,47 @@ class MaeketAdapter(var context: Context, var list: List<CryptoCurrency>,var typ
 
     override fun onBindViewHolder(holder: MarketViewHolder, position: Int) {
         val item = list[position]
-        holder.binding.currencyNameTextView.text=item.name
-        holder.binding.currencySymbolTextView.text =item.symbol
+        holder.binding.currencyNameTextView.text = item.name
+        holder.binding.currencySymbolTextView.text = item.symbol
 
         Glide.with(context).load(
-            "https://s2.coinmarketcap.com/static/img/coins/64x64/"+ item.id+".png"
+            "https://s2.coinmarketcap.com/static/img/coins/64x64/" + item.id + ".png"
         ).thumbnail(Glide.with(context).load(R.drawable.spinner))
             .into(holder.binding.currencyImageView)
 
         Glide.with(context).load(
-            "https://s3.coinmarketcap.com/generated/sparklines/web/7d/usd/"+ item.id+".png"
+            "https://s3.coinmarketcap.com/generated/sparklines/web/7d/usd/" + item.id + ".png"
         ).thumbnail(Glide.with(context).load(R.drawable.spinner))
             .into(holder.binding.currencyChartImageView)
 
 
 
         holder.binding.currencyPriceTextView.text =
-            "${String.format("$%.02f",item.quotes[0].price)}"
+            "${String.format("$%.02f", item.quotes[0].price)}"
 
-        if (item.quotes!![0].percentChange24h>0){
+        if (item.quotes!![0].percentChange24h > 0) {
 
             holder.binding.currencyChangeTextView.setTextColor(context.resources.getColor(R.color.green))
-            holder.binding.currencyChangeTextView.text = "+ ${String.format("%.02f",item.quotes[0].percentChange24h)}%"
+            holder.binding.currencyChangeTextView.text =
+                "+ ${String.format("%.02f", item.quotes[0].percentChange24h)}%"
 
-        }else{
+        } else {
 
             holder.binding.currencyChangeTextView.setTextColor(context.resources.getColor(R.color.red))
-            holder.binding.currencyChangeTextView.text = "${String.format("%.02f",item.quotes[0].percentChange24h)}%"
+            holder.binding.currencyChangeTextView.text =
+                "${String.format("%.02f", item.quotes[0].percentChange24h)}%"
         }
 
         holder.itemView.setOnClickListener {
-            if (type=="market"){
+            if (type == "market") {
                 findNavController(it).navigate(
                     PiyasaFragmentDirections.actionPiyasaFragmentToDetailsFragment(item)
                 )
-            } else if (type == "Arama"){
+            } else if (type == "Arama") {
                 findNavController(it).navigate(
                     AramaFragmentDirections.actionAramaFragmentToDetailsFragment(item)
                 )
-            }else{
+            } else {
 
                 findNavController(it).navigate(
                     StarFragmentDirections.actionStarFragmentToDetailsFragment(item)
@@ -89,14 +95,7 @@ class MaeketAdapter(var context: Context, var list: List<CryptoCurrency>,var typ
         }
 
 
-
-
-
-
-
     }
-
-
 
 
 }

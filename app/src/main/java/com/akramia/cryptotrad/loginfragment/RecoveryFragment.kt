@@ -37,13 +37,22 @@ class RecoveryFragment : Fragment() {
                 auth.sendPasswordResetEmail(email)  // Şifre sıfırlama isteği gönder
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
-                            Toast.makeText(context, "Password reset email sent. Check your email.", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(
+                                context,
+                                "Password reset email sent. Check your email.",
+                                Toast.LENGTH_SHORT
+                            ).show()
                         } else {
-                            Toast.makeText(context, "Error: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(
+                                context,
+                                "Error: ${task.exception?.message}",
+                                Toast.LENGTH_SHORT
+                            ).show()
                         }
                     }
             } else {
-                Toast.makeText(context, "Email cannot be empty", Toast.LENGTH_SHORT).show()  // E-posta boşsa uyarı ver
+                Toast.makeText(context, "Email cannot be empty", Toast.LENGTH_SHORT)
+                    .show()  // E-posta boşsa uyarı ver
             }
         }
 

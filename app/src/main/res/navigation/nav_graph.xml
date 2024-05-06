@@ -10,7 +10,7 @@
         android:id="@+id/PiyasaFragment"
         android:name="com.akramia.cryptotrad.fragment.PiyasaFragment"
         android:label="fragment_piyasa"
-        tools:layout="@layout/fragment_piyasa" >
+        tools:layout="@layout/fragment_piyasa">
         <action
             android:id="@+id/action_PiyasaFragment_to_AramaFragment"
             app:destination="@id/AramaFragment" />
@@ -23,7 +23,7 @@
         android:id="@+id/StarFragment"
         android:name="com.akramia.cryptotrad.fragment.StarFragment"
         android:label="fragment_star"
-        tools:layout="@layout/fragment_star" >
+        tools:layout="@layout/fragment_star">
         <action
             android:id="@+id/action_StarFragment_to_detailsFragment"
             app:destination="@id/detailsFragment" />
@@ -35,7 +35,7 @@
         android:id="@+id/AramaFragment"
         android:name="com.akramia.cryptotrad.fragment.AramaFragment"
         android:label="fragment_arama"
-        tools:layout="@layout/fragment_arama" >
+        tools:layout="@layout/fragment_arama">
         <action
             android:id="@+id/action_AramaFragment_to_PiyasaFragment"
             app:destination="@id/PiyasaFragment" />
@@ -51,18 +51,18 @@
     <fragment
         android:id="@+id/detailsFragment"
         android:name="com.akramia.cryptotrad.fragment.DetailsFragment"
-        android:label="DetailsFragment" >
+        android:label="DetailsFragment">
         <argument
             android:name="data"
+            android:defaultValue="@null"
             app:argType="com.nexis.cryptoapp.models.CryptoCurrency"
-            app:nullable="true"
-            android:defaultValue="@null" />
+            app:nullable="true" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.akramia.cryptotrad.loginfragment.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
+        tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_signupFragment"
             app:destination="@id/signupFragment" />
@@ -80,7 +80,7 @@
         android:id="@+id/logRegFragment"
         android:name="com.akramia.cryptotrad.loginfragment.LogRegFragment"
         android:label="fragment_log_reg"
-        tools:layout="@layout/fragment_log_reg" >
+        tools:layout="@layout/fragment_log_reg">
         <action
             android:id="@+id/action_logRegFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
@@ -92,7 +92,7 @@
         android:id="@+id/signupFragment"
         android:name="com.akramia.cryptotrad.loginfragment.signupFragment"
         android:label="fragment_signup"
-        tools:layout="@layout/fragment_signup" >
+        tools:layout="@layout/fragment_signup">
         <action
             android:id="@+id/action_signupFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
@@ -107,7 +107,7 @@
         android:id="@+id/splashFragment"
         android:name="com.akramia.cryptotrad.SplashFragment"
         android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash" >
+        tools:layout="@layout/fragment_splash">
         <action
             android:id="@+id/action_splashFragment_to_logRegFragment"
             app:destination="@id/logRegFragment" />
@@ -115,7 +115,7 @@
     <fragment
         android:id="@+id/recoveryFragment"
         android:name="com.akramia.cryptotrad.loginfragment.RecoveryFragment"
-        android:label="RecoveryFragment" >
+        android:label="RecoveryFragment">
         <action
             android:id="@+id/action_recoveryFragment_to_loginFragment"
             app:destination="@id/loginFragment" />

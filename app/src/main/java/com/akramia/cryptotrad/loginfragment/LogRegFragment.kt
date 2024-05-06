@@ -16,9 +16,9 @@ class LogRegFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding=FragmentLogRegBinding.inflate(inflater)
+        binding = FragmentLogRegBinding.inflate(inflater)
 
-        binding.imageView7.setOnClickListener{
+        binding.imageView7.setOnClickListener {
             findNavController().navigate(R.id.action_logRegFragment_to_loginFragment)
         }
 
