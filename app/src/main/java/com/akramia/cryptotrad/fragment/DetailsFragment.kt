@@ -73,7 +73,7 @@ class DetailsFragment : Fragment() {
                     true
                 }else{
                     binding.addWatchlistButton.setImageResource(R.drawable.ic_star_outline)
-                    starList!!.remove(data.symbol)
+                    starList!!.remove(data .symbol)
                     storeData()
                     false
                 }
@@ -184,7 +184,17 @@ class DetailsFragment : Fragment() {
         ).thumbnail(Glide.with(requireContext()).load(R.drawable.spinner))
             .into(binding.detailImageView)
 
-        binding.detailPriceTextView.text = "+ ${String.format("%.4f",data.quotes[0].percentChange24h)}%"
+        if (data.quotes!![0].percentChange24h>0){
+
+            binding.detailPriceTextView.text = " +${String.format("%.4f",data.quotes[0].percentChange24h)}%"
+
+
+        }else{
+
+            binding.detailPriceTextView.text = " ${String.format("%.4f",data.quotes[0].percentChange24h)}%"
+        }
+
+
 
 
         if (data.quotes!![0].percentChange24h>0){

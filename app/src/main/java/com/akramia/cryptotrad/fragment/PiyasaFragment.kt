@@ -35,9 +35,7 @@ class PiyasaFragment : Fragment() {
 
         observeViewModel()
 
-        binding.imageView2.setOnClickListener {
-            findNavController().navigate(R.id.action_PiyasaFragment_to_AramaFragment)
-        }
+
 
 
 

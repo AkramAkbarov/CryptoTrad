@@ -23,10 +23,6 @@
         android:icon="@drawable/ic_explore"
         android:title=""
         app:showAsAction="always"/>
-    <item android:id="@+id/UserProfilFragment"
-        android:enabled="true"
-        android:icon="@drawable/ic_user"
-        android:title=""
-        app:showAsAction="always"/>
+
 
 </menu>

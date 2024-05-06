@@ -25,19 +25,22 @@ class OgrenFragment : Fragment() {
     private lateinit var binding: FragmentOgrenBinding
     private lateinit var recyclerView: RecyclerView
     private val ogren = listOf(
-        Language("İki Dev Şirketten Bitcoin","Bobby Ong",
-            "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.cripto),
+        Language("What Is Polkadot 2.0 and DOT?","CoinGecko",
+            "https://www.coingecko.com/learn/polkadot-dot-crypto-2-0?utm_source=explore&utm_medium=app",
+            R.drawable.ogrenfoto),
 
-        Language("Ethereum ve Bitcoin'in Piyasa", "Bobby Ong",
+        Language("Degen Chain and\n" +
+                "DEGEN Overview: The\n" +
+                "Community-Driven La...", "Sankrit K",
             "https://www.bitcoinhaber.net/ethereum-ve-bitcoinin-piyasa-dinamiklerindeki-rolu/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
             R.drawable.kripto),
 
-        Language("Crypto Capo Altcoin","Patlamasına lşaret Etti! Ancak\n" +
-                "Bir Şarti Var ", "https://coin-turk.com/crypto-capo-altcoin-patlamasina-isaret-etti-ancak-bir-sarti-var?utm_source=coingecko&utm_medium=coingecko&utm_campaign=coingecko&utm_content=coingecko&utm_term=coingecko",
+        Language("Guide on Earning\n" +
+                "deBridge Points and\n" +
+                "Improving Airdrop Elig...","Stephanie Goh", "https://coin-turk.com/crypto-capo-altcoin-patlamasina-isaret-etti-ancak-bir-sarti-var?utm_source=coingecko&utm_medium=coingecko&utm_campaign=coingecko&utm_content=coingecko&utm_term=coingecko",
             R.drawable.kriptoe),
 
-        Language("Bitcoin'in Yükseliş eğilimi.", "Michael van de Poppe'nin\n" +
+        Language("API3's \"Netflix Moment\" and the Changing Oracle Land...", "CoinGecko" +
                 "Analizi ","https://www.bitcoinhaber.net/bitcoinin-yukselis-egilimi-ve-michael-van-de-poppenin-analizi/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
             R.drawable.bitcoinhaberi013),
     )

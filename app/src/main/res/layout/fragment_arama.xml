@@ -17,7 +17,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="28dp"
-        android:background="@drawable/top_gainersssss_bg"
+        android:background="@drawable/top_gainersssss_search_bg"
         android:ems="10"
         android:hint="Search Crypto Currency"
         android:drawableRight="@drawable/ic_searchs"

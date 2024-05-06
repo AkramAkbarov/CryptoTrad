@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/splashFragment">
+    app:startDestination="@id/KesfetFragment">
 
 
     <fragment
@@ -120,8 +120,5 @@
             android:id="@+id/action_recoveryFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/UserProfilFragment"
-        android:name="com.akramia.cryptotrad.fragment.UserProfilFragment"
-        android:label="UserProfilFragment" />
+
 </navigation>

@@ -31,9 +31,9 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:layout_width="60dp"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:text="Favori"
+                android:text="Portfolio"
                 android:textColor="#00B0FF"
                 android:textSize="18dp"
                 android:textStyle="bold"
