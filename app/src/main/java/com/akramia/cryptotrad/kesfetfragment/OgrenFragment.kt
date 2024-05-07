@@ -35,8 +35,8 @@ class OgrenFragment : Fragment() {
             "Degen Chain and\n" +
                     "DEGEN Overview: The\n" +
                     "Community-Driven La...", "Sankrit K",
-            "https://www.bitcoinhaber.net/ethereum-ve-bitcoinin-piyasa-dinamiklerindeki-rolu/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.kripto
+            "https://www.coingecko.com/learn/what-is-degen-chain-degen-crypto?utm_source=explore&utm_medium=app",
+            R.drawable.ogrenfoto2
         ),
 
         Language(
@@ -44,16 +44,49 @@ class OgrenFragment : Fragment() {
                     "deBridge Points and\n" +
                     "Improving Airdrop Elig...",
             "Stephanie Goh",
-            "https://coin-turk.com/crypto-capo-altcoin-patlamasina-isaret-etti-ancak-bir-sarti-var?utm_source=coingecko&utm_medium=coingecko&utm_campaign=coingecko&utm_content=coingecko&utm_term=coingecko",
-            R.drawable.kriptoe
+            "https://www.coingecko.com/learn/debridge-points-airdrop?utm_source=explore&utm_medium=app",
+            R.drawable.ogrenfoto3
         ),
 
         Language(
             "API3's \"Netflix Moment\" and the Changing Oracle Land...",
             "CoinGecko" +
                     "Analizi ",
-            "https://www.bitcoinhaber.net/bitcoinin-yukselis-egilimi-ve-michael-van-de-poppenin-analizi/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.bitcoinhaberi013
+            "https://www.coingecko.com/learn/api3-netflix-moment-changing-oracle-landscape?utm_source=explore&utm_medium=app",
+            R.drawable.ogrenfoto4
+
+
+
+        ),
+        Language(
+            "Beyond Bitcoin\n" +
+                    "Halving: What's Next?", "CoinGecko",
+            "https://www.coingecko.com/learn/beyond-bitcoin-halving?utm_source=explore&utm_medium=app",
+            R.drawable.ogrenfoto5
+        ),
+
+        Language(
+            "Top 6 Crypto Trading Top 6 Crypto Trading\n" +
+                    "Apps", "CoinGecko",
+            "https://www.coingecko.com/learn/top-crypto-trading-apps?utm_source=explore&utm_medium=app",
+            R.drawable.ogrenfoto6
+        ),
+
+        Language(
+            "What Are Bitcoin\n" +
+                    "Runes? Bringing\n" +
+                    "Memecoins to Bitcoin",
+            "Joel Agbo ",
+            "https://www.coingecko.com/learn/what-are-bitcoin-runes?utm_source=explore&utm_medium=app",
+            R.drawable.ogrenfoto7
+        ),
+
+        Language(
+            "How to Build a Crypto\n" +
+                    "Telegram Bot (EasyGuide)",
+            "Rollend Xavier ",
+            "https://www.coingecko.com/learn/api3-netflix-moment-changing-oracle-landscape?utm_source=explore&utm_medium=app",
+            R.drawable.ogrenfoto8
         ),
     )
     private lateinit var viewPager: ViewPager2

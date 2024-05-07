@@ -24,31 +24,44 @@ class BlogFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private val blog = listOf(
         Language(
-            "İki Dev Şirketten Bitcoin", "Bobby Ong",
-            "https://kriptokoin.com/iki-dev-sirketten-bitcoin-tahmini/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.cripto
+            "Trust Score 3.0 - Proof\n" +
+                    "of Reserves (Assets &\n" +
+                    "Liabilities) ", "Bobby Ong",
+            "https://blog.coingecko.com/trust-score-3-proof-of-reserves-asset-liabilities/",
+            R.drawable.blogfoto1
         ),
 
         Language(
-            "Ethereum ve Bitcoin'in Piyasa", "Bobby Ong",
-            "https://www.bitcoinhaber.net/ethereum-ve-bitcoinin-piyasa-dinamiklerindeki-rolu/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.kripto
+            "Trust Score 3.0 - Proof\n" +
+                    "of Reserves (Assets &\n" +
+                    "Liabilities) ", "Bobby Ong",
+            "https://blog.coingecko.com/coingecko-premium-revamp-more-content-alpha/",
+            R.drawable.blogfoto2
         ),
 
         Language(
-            "Crypto Capo Altcoin",
-            "Patlamasına lşaret Etti! Ancak\n" +
-                    "Bir Şarti Var ",
-            "https://coin-turk.com/crypto-capo-altcoin-patlamasina-isaret-etti-ancak-bir-sarti-var?utm_source=coingecko&utm_medium=coingecko&utm_campaign=coingecko&utm_content=coingecko&utm_term=coingecko",
-            R.drawable.kriptoe
+            "CoinGecko 2021 Year\n" +
+                    "In Review ",
+            "Bobby Ong",
+            "https://blog.coingecko.com/coingecko-2021-year-in-review/",
+            R.drawable.blogfoto4
         ),
 
         Language(
-            "Bitcoin'in Yükseliş eğilimi.",
-            "Michael van de Poppe'nin\n" +
-                    "Analizi ",
-            "https://www.bitcoinhaber.net/bitcoinin-yukselis-egilimi-ve-michael-van-de-poppenin-analizi/?utm_source=coingecko&utm_content=coingecko&utm_campaign=coingecko&utm_medium=coingecko&utm_term=coingecko",
-            R.drawable.bitcoinhaberi013
+            "Using array_position\n" +
+                    "to Sort ActiveRecord\n" +
+                    "Records By Array",
+            "Wenjie Yek",
+            "https://blog.coingecko.com/using-array_position-to-sort-activerecord-records-by-array/",
+            R.drawable.blogfoto5
+        ),
+        Language(
+            "A test to avoid class\n" +
+                    "name misspelled in\n" +
+                    "Sidekig Periodic Jobs ",
+            "Wenjie Yek",
+            "https://blog.coingecko.com/a-test-to-avoid-class-name-misspelled-in-sidekiq-periodic-jobs/",
+            R.drawable.blogfoto7
         ),
     )
 
@@ -64,7 +77,7 @@ class BlogFragment : Fragment() {
         recyclerView = view.findViewById(R.id.BlogRec)
         recyclerView.layoutManager = LinearLayoutManager(context)
 
-        // RecyclerView'ın görünmeden önce SpinKitView'ın görünür olmasını sağlayan kod bloğu
+
         binding.spinKitView.visibility = View.VISIBLE
         recyclerView.visibility = View.GONE
 
